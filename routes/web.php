@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Backoffice\DashboardController;
+use App\Http\Controllers\Backoffice\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('', [DashboardController::class, 'index'])->name('test');
+Route::get('/user', [UserController::class, 'getView'])->name('bo-user');
+
+

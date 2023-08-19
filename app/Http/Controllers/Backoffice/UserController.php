@@ -16,6 +16,12 @@ class UserController extends Controller
         $this->userRepo = new UserRepository;
     }
 
+    public function getView()
+    {
+        // $data = $this->userRepo->getAllPayload([]);
+        return view('Backoffice.User');
+    }
+
     public function getAllData()
     {
         $result = $this->userRepo->getAllPayload([]);
