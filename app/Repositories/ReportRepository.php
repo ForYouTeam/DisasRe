@@ -21,7 +21,7 @@ class ReportRepository implements ReportContract
   {
     try {
 
-      $data = $this->reportModel->where('scope', 'admin')->orWhere('scope', 'user')->all();
+      $data = $this->reportModel->all();
 
       return $this->success($data, "success getting data");
 
@@ -89,11 +89,7 @@ class ReportRepository implements ReportContract
       if ($find['code'] != 200) {
         return $find;
       }
-
-      if ($find['code'] == 200 && $find['data']['scope'] == 'super-admin') {
-        return $this->error('report not found', 404);
-      }
-
+      
       $data = $this->reportModel->whereId($id)->delete();
 
       return $this->success($data, "success deleting data");

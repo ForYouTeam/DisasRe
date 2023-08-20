@@ -21,7 +21,7 @@ class FloodRepository implements FloodContract
   {
     try {
 
-      $data = $this->floodModel->where('scope', 'admin')->orWhere('scope', 'user')->all();
+      $data = $this->floodModel->all();
 
       return $this->success($data, "success getting data");
 
@@ -89,11 +89,6 @@ class FloodRepository implements FloodContract
       if ($find['code'] != 200) {
         return $find;
       }
-
-      if ($find['code'] == 200 && $find['data']['scope'] == 'super-admin') {
-        return $this->error('flood not found', 404);
-      }
-
       $data = $this->floodModel->whereId($id)->delete();
 
       return $this->success($data, "success deleting data");

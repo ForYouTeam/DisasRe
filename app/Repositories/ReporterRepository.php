@@ -21,7 +21,7 @@ class ReporterRepository implements ReporterContract
   {
     try {
 
-      $data = $this->reporterModel->where('scope', 'admin')->orWhere('scope', 'user')->all();
+      $data = $this->reporterModel->all();
 
       return $this->success($data, "success getting data");
 
@@ -89,11 +89,7 @@ class ReporterRepository implements ReporterContract
       if ($find['code'] != 200) {
         return $find;
       }
-
-      if ($find['code'] == 200 && $find['data']['scope'] == 'super-admin') {
-        return $this->error('reporter not found', 404);
-      }
-
+      
       $data = $this->reporterModel->whereId($id)->delete();
 
       return $this->success($data, "success deleting data");

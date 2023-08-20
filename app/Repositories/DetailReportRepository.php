@@ -21,7 +21,7 @@ class DetailReportRepository implements DetailReportContract
   {
     try {
 
-      $data = $this->detailReportModel->where('scope', 'admin')->orWhere('scope', 'user')->all();
+      $data = $this->detailReportModel->all();
 
       return $this->success($data, "success getting data");
 

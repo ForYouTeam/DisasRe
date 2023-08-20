@@ -21,7 +21,7 @@ class ReportPhotoRepository implements ReportPhotoContract
   {
     try {
 
-      $data = $this->reportPhotoModel->where('scope', 'admin')->orWhere('scope', 'user')->all();
+      $data = $this->reportPhotoModel->all();
 
       return $this->success($data, "success getting data");
 
@@ -89,11 +89,7 @@ class ReportPhotoRepository implements ReportPhotoContract
       if ($find['code'] != 200) {
         return $find;
       }
-
-      if ($find['code'] == 200 && $find['data']['scope'] == 'super-admin') {
-        return $this->error('report photo not found', 404);
-      }
-
+      
       $data = $this->reportPhotoModel->whereId($id)->delete();
 
       return $this->success($data, "success deleting data");
