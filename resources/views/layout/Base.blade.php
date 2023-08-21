@@ -16,6 +16,7 @@
     </div>
 
 @include('layout.Footer')
+@yield('script')
 </body>
 
 </html>

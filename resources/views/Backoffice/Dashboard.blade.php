@@ -1,4 +1,7 @@
 @extends('layout.Base')
+@section('title')
+    Dashboard
+@endsection
 @section('content')
     <div class="analytics-sparkle-area">
         <div class="container-fluid">
