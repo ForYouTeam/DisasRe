@@ -48,7 +48,7 @@
                 <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
             </div>
             <div class="modal-body">
-                <h4 class="">Formulir Tambah Data</h4><hr>
+                <h4 class="" id="modal-title">Formulir Tambah Data</h4><hr>
                 <div class="" style="margin-top: 20px">
                     <form id="form-data" enctype="multipart/form-data">
                         @csrf
@@ -157,6 +157,7 @@
 
     $(document).on('click', '#btn-edit', function() {
         clearInput()
+        $('#modal-title').html('Formulir Edit Data')
         let dataId = $(this).data('id')
         $.get(`${baseUrl}/api/v1/reporter/${dataId}`, (res) => {
             let data = res.data

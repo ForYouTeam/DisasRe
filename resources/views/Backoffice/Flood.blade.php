@@ -47,21 +47,24 @@
                 <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
             </div>
             <div class="modal-body">
-                <h4 class="">Formulir Tambah Data</h4><hr>
+                <h4 class="" id="modal-title">Formulir Tambah Data</h4><hr>
                 <div class="" style="margin-top: 20px">
                     <form action="#">
                         <input type="hidden" name="id" id="id">
                         <div class="form-group-inner">
                             <label style="float: left">Type</label>
                             <input type="text" name="type" id="type" class="form-control" placeholder="Input disini">
+                            <span class="text-danger" id="alert-type"></span>
                         </div>
                         <div class="form-group-inner">
                             <label style="float: left">Level</label>
                             <input type="text" name="level" id="level" class="form-control" placeholder="Input disini">
+                            <span class="text-danger" id="alert-level"></span>
                         </div>
                         <div class="form-group-inner">
                             <label style="float: left">Priority</label>
                             <input type="text" name="priority" id="priority" class="form-control" placeholder="Input disini">
+                            <span class="text-danger" id="alert-priority"></span>
                         </div>
                     </form>
                 </div>
@@ -144,6 +147,7 @@
 
     $(document).on('click', '#btn-edit', function() {
         clearInput()
+        $('#modal-title').html('Formulir Edit Data')
         let dataId = $(this).data('id')
         $.get(`${baseUrl}/api/v1/flood/${dataId}`, (res) => {
             let data = res.data
@@ -192,7 +196,7 @@
                     let errorRes = data.errors;
                     if (errorRes.length >= 1) {
                         $.each(errorRes.data, (i, d) => {
-                            $(`#alert${i}`).html(d)
+                            $(`#alert-${i}`).html(d)
                         })
                     }
                 } else {
