@@ -19,8 +19,8 @@ class ReporterController extends Controller
 
     public function getView()
     {
-        // $data = $this->reporterRepo->getAllPayload([]);
-        return view('Backoffice.User');
+        $data = $this->reporterRepo->getAllPayload([]);
+        return view('Backoffice.Reporter')->with('data', $data['data']);
     }
 
     public function getAllData()

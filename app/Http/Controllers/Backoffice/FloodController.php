@@ -18,8 +18,8 @@ class FloodController extends Controller
 
     public function getView()
     {
-        // $data = $this->floodRepo->getAllPayload([]);
-        return view('Backoffice.User');
+        $data = $this->floodRepo->getAllPayload([]);
+        return view('Backoffice.Flood')->with('data', $data);
     }
 
     public function getAllData()
