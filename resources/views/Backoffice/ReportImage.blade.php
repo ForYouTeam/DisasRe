@@ -4,7 +4,7 @@
 @endsection
 @section('style')
 <style>
-    #image-upload,input[type=file]{
+    #upload_file[type="file"] {
         display: none;
     }
 
@@ -69,12 +69,16 @@
                             <option value="">Data</option>
                         </select>
                         <br>
-                        <label for="upload_file" class="custom-file-label"><i class="fa fa-plus" aria-hidden="true"></i> Tambah Gambar</label>
-                        <input type="file" id="upload_file" name="upload_file[]" id="image-upload" onchange="preview_image();" multiple/>
+                        <label for="upload_file" id="add-image" class="custom-file-label"><i class="fa fa-plus" aria-hidden="true"></i> Tambah Gambar</label>
+                        <div id="path-image">
+
+                        </div>
+                        
+                        {{-- <input type="file" id="upload_file" name="upload_file[]" onchange="preview_image();" multiple/>
                         <div class="row">
                             <div id="image_preview">
                             </div>
-                        </div>
+                        </div> --}}
                         <button type="button" id="add-image" disabled class="btn btn-custon-rounded-three btn-primary" style="margin-bottom: 15px; margin-top: 30px; float: right;"> Simpan Data</button>
                     </div>
                 </div>
@@ -124,23 +128,14 @@
 @endsection
 @section('script')
 <script>
-    function preview_image() {
-            var total_files = $('#upload_file')[0].files.length;
-            $('#image_preview').append(); // Clear previous previews
-
-            for (var i = 0; i < total_files; i++) {
-                var file = $('#upload_file')[0].files[i];
-                var imageUrl = URL.createObjectURL(file);
-
-                $('#image_preview').append(`
-                    <div class="col-md-4" style="margin-top: 20px">
-                        <img src="${imageUrl}" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; width: 200px; height: 150px">
-                    </div>
-                `);
-            }
-
-            $('#add-image').prop('disabled', false)
-        }
+    
+    $(document).ready(function(){
+        $('#add-image').click(function(){
+            $('#path-image').append(`
+                <input type="file" class="form-control" style="margin-top: 10px" name="image[]" id="">
+            `)
+        })
+    })
 
 </script>
 @endsection
