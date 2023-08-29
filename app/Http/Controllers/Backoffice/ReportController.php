@@ -22,6 +22,11 @@ class ReportController extends Controller
         return view('Backoffice.ReportImage');
     }
 
+    public function detailView()
+    {
+        return view('Backoffice.DetailReportImage');
+    }
+
     public function getAllData()
     {
         $result = $this->reportRepo->getAllPayload([]);

@@ -24,6 +24,7 @@ Route::get('/user', [UserController::class, 'getView'])->name('bo-user');
 Route::get('/flood', [FloodController::class, 'getView'])->name('bo-flood');
 Route::get('/reporter', [ReporterController::class, 'getView'])->name('bo-reporter');
 Route::get('/report-image', [ReportController::class, 'getView'])->name('bo-report-image');
+Route::get('/detail', [ReportController::class, 'detailView'])->name('detail-report');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
