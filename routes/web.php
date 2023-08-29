@@ -23,5 +23,6 @@ Route::get('/user', [UserController::class, 'getView'])->name('bo-user');
 Route::get('/flood', [FloodController::class, 'getView'])->name('bo-flood');
 Route::get('/reporter', [ReporterController::class, 'getView'])->name('bo-reporter');
 Route::get('/report-image', [ReportController::class, 'getView'])->name('bo-report-image');
+Route::post('/report', [ReportController::class, 'upsertData'])->name('bo-report-image-store');
 
 

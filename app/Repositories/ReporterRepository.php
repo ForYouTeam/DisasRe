@@ -49,7 +49,7 @@ class ReporterRepository implements ReporterContract
     }
   }
 
-  public function upsertPayload($id, array $payload)
+  public function upsertPayload($id, array $payload, string $profilImage)
   {
     try {
       if ($id) {
@@ -57,6 +57,7 @@ class ReporterRepository implements ReporterContract
         if ($find['code'] !== 200) {
           return $find;
         }
+        $payload['selfie'] = $profilImage;
         $payload['updated_at'] = Carbon::now();
         $result = [
           'data' => $this->reporterModel->whereId($id)->update($payload),
@@ -64,7 +65,7 @@ class ReporterRepository implements ReporterContract
         ];
 
       } else {
-
+        $payload['selfie'] = $profilImage;
         $result = [
           'data' => $this->reporterModel->create($payload),
           'message' => 'Created data successfully'
