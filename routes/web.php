@@ -5,6 +5,7 @@ use App\Http\Controllers\Backoffice\FloodController;
 use App\Http\Controllers\Backoffice\ReportController;
 use App\Http\Controllers\Backoffice\ReporterController;
 use App\Http\Controllers\Backoffice\UserController;
+use App\Http\Controllers\web\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,5 +25,7 @@ Route::get('/flood', [FloodController::class, 'getView'])->name('bo-flood');
 Route::get('/reporter', [ReporterController::class, 'getView'])->name('bo-reporter');
 Route::get('/report-image', [ReportController::class, 'getView'])->name('bo-report-image');
 Route::post('/report', [ReportController::class, 'upsertData'])->name('bo-report-image-store');
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 
