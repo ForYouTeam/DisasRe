@@ -19,9 +19,10 @@
 	<link rel="stylesheet" href="{{asset('web/css/glightbox.min.css')}}">
 	<link rel="stylesheet" href="{{asset('web/css/style.css')}}">
 	<link rel="stylesheet" href="{{asset('web/css/flatpickr.min.css')}}">
-
 	<title>Sistem Informasi Report</title>
 </head>
+<style>
+</style>
 <body>
 
 	<div class="site-mobile-menu site-navbar-target">
@@ -90,7 +91,7 @@
 		<div class="container">
 			<div class="row justify-content-between">
 				<div class="col-lg-7 mb-4 mb-lg-0">
-					<img src="{{asset('web/images/img-3.jpg')}}" alt="Image" class="img-fluid rounded
+					<img src="{{asset('web/banjir.jpg')}}" alt="Image" class="img-fluid rounded
 					">
 				</div>
 				<div class="col-lg-4 ps-lg-2">
@@ -188,7 +189,18 @@
 									</div>
 									<div class="form-group">
 										<label for="">Gambar <span class="text-danger">*</span></label>
-										<input type="file" class="form-control" name="" id="">
+										<div class="form-group mt-3">
+											<label for="">File 1</label>
+											<input type="file" class="form-control gmbr" name="" id="">
+										</div>
+										<div class="form-group">
+											<label for="">File 2</label>
+											<input type="file" class="form-control gmbr" name="" id="">
+										</div>
+										<div class="form-group">
+											<label for="">File 3</label>
+											<input type="file" class="form-control gmbr" name="" id="">
+										</div>
 									</div>
 								</div>
 							</div>
