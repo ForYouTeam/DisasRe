@@ -49,6 +49,24 @@ class ReportPhotoRepository implements ReportPhotoContract
     }
   }
 
+  public function getPayloadByReportId(int $id)
+  {
+    try {
+      
+      $find = $this->reportPhotoModel->where('report_id', $id)->get();
+
+      if (!$find) {
+        return $this->error('report photo not found', 404);
+      }
+
+      return $this->success($find, "success getting data");
+
+    } catch (\Throwable $th) {
+
+      return $this->error($th->getMessage(), 500, $th, class_basename($this), __FUNCTION__ );
+    }
+  }
+
   public function upsertPayload($id, array $payload)
   {
     try {

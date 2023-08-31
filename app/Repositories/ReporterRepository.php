@@ -49,6 +49,24 @@ class ReporterRepository implements ReporterContract
     }
   }
 
+  public function getPayloadByReportId(int $id)
+  {
+    try {
+      
+      $find = $this->reporterModel->where('report_id',$id)->first();
+
+      if (!$find) {
+        return $this->error('reporter not found', 404);
+      }
+
+      return $this->success($find, "success getting data");
+
+    } catch (\Throwable $th) {
+
+      return $this->error($th->getMessage(), 500, $th, class_basename($this), __FUNCTION__ );
+    }
+  }
+
   public function upsertPayload($id, array $payload, string $profilImage)
   {
     try {

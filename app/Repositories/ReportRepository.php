@@ -42,7 +42,7 @@ class ReportRepository implements ReportContract
   {
     try {
       
-      $find = $this->reportModel->whereId($id)->first();
+      $find = $this->reportModel->whereId($id)->with('reporter')->first();
 
       if (!$find) {
         return $this->error('report not found', 404);

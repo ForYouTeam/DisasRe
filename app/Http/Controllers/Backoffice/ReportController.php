@@ -2,41 +2,60 @@
 
 namespace App\Http\Controllers\Backoffice;
 
+use App\Contracts\DetailReportContract;
 use App\Contracts\FloodContract;
 use App\Contracts\ReportContract;
 use App\Contracts\ReporterContract;
+use App\Contracts\ReportPhotoContract;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ReporterRequest;
 use App\Http\Requests\ReportRequest;
+use App\Repositories\DetailReportRepository;
 use App\Repositories\FloodRepository;
 use App\Repositories\ReporterRepository;
+use App\Repositories\ReportPhotoRepository;
 use App\Repositories\ReportRepository;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ReportController extends Controller
 {
     private ReportContract $reportRepo;
     private ReporterContract $reporterRepo;
     private FloodContract $floodRepo;
+    private DetailReportContract $detailRepo;
+    private ReportPhotoContract $reportPhotoRepo;
     public function __construct()
     {
         $this->reportRepo = new ReportRepository;
         $this->floodRepo = new FloodRepository;
         $this->reporterRepo = new ReporterRepository;
+        $this->detailRepo = new DetailReportRepository;
+        $this->reportPhotoRepo = new ReportPhotoRepository;
     }
 
     public function getView()
+    {
+        return view('Backoffice.ReportImage');
+    }
+
+    public function detailView($id)
+    {
+        $reporter = $this->reportRepo->getPayloadById($id);
+        $data = [
+            'report' => $this->reportRepo->getPayloadById($id),
+            'detail' => $this->detailRepo->getPayloadByReportId($id),
+            'photo' => $this->reportPhotoRepo->getPayloadByReportId(1),
+        ]; 
+        return view('Backoffice.DetailReportImage')->with('data', $data);
+    }
+    public function add()
     {
         $data =[
             'flood' => $this->floodRepo->getAllPayload([]),
             'reporter' => $this->reporterRepo->getAllPayload([]),
         ] ;
-        return view('Backoffice.ReportImage')->with('data', $data);
-    }
-
-    public function detailView()
-    {
-        return view('Backoffice.DetailReportImage');
+        return view('Backoffice.AddReport')->with('data', $data);
     }
 
     public function getAllData()
@@ -75,7 +94,7 @@ class ReportController extends Controller
     {
         $data_report = [
             'reporter_id' => $request->reporter_id,
-            'report_number' => random_int(100000, 999999),
+            'report_number' =>  'LPR-'.random_int(100000, 999999),
         ];
         $data_report_detail = [
             'flood_id' => $request->flood_id,
@@ -103,7 +122,8 @@ class ReportController extends Controller
         $id = $request->id | null;
         $result = $this->reportRepo->upsertPayload($id, $data_report, $data_report_detail, $dataCollReportPhoto );
         if ($result) {
-            dd('asw');
+            Alert::success('Berhasil', 'Berhasil Membuat Laporan');
+            return back();
         }
         
     }

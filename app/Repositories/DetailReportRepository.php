@@ -49,6 +49,24 @@ class DetailReportRepository implements DetailReportContract
     }
   }
 
+  public function getPayloadByReportId(int $id)
+  {
+    try {
+      
+      $find = $this->detailReportModel->where('report_id',$id)->with('flood')->first();
+
+      if (!$find) {
+        return $this->error('detail report not found', 404);
+      }
+
+      return $this->success($find, "success getting data");
+
+    } catch (\Throwable $th) {
+
+      return $this->error($th->getMessage(), 500, $th, class_basename($this), __FUNCTION__ );
+    }
+  }
+
   public function upsertPayload($id, array $payload)
   {
     try {

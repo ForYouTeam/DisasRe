@@ -25,8 +25,10 @@ Route::get('/flood', [FloodController::class, 'getView'])->name('bo-flood');
 Route::get('/reporter', [ReporterController::class, 'getView'])->name('bo-reporter');
 Route::get('/report-image', [ReportController::class, 'getView'])->name('bo-report-image');
 Route::post('/report', [ReportController::class, 'upsertData'])->name('bo-report-image-store');
-Route::get('/detail', [ReportController::class, 'detailView'])->name('detail-report');
+Route::get('/report/detail/{id}', [ReportController::class, 'detailView'])->name('detail-report');
+Route::get('/add', [ReportController::class, 'add'])->name('add-report');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::post('/home', [HomeController::class, 'store']);
 
 
