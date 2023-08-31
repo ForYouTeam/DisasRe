@@ -50,7 +50,7 @@
             <div class="modal-body">
                 <h4 class="" id="modal-title">Formulir Tambah Data</h4><hr>
                 <div class="" style="margin-top: 20px">
-                    <form id="form-data" enctype="multipart/form-data">
+                    <form action="" id="form-data" enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" name="id" id="id">
                         <div class="form-group-inner">
@@ -184,6 +184,7 @@
             if(!submitButton){
                 let foto = $('#selfie').prop('files')[0]
                 let data = new FormData($('#form-data')[0]);
+                console.log($('#form-data')[0]);
                 $.ajax({
                     url        : `${baseUrl}/api/v1/reporter`,
                     method     : "POST"                    ,
@@ -192,6 +193,7 @@
                     contentType: false                     ,
                     processData: false                     ,
                     success: function(result) {
+                        console.log(result);
                         let data = result.data;
                             Swal.fire({
                                 title            : 'Success'                ,
@@ -241,7 +243,7 @@
                             <td>${i + 1}</td>
                             <td class="text-capitalize">${d.name}</td>
                             <td class="text-capitalize">${d.phone}</td>
-                            <td class="text-capitalize">${d.selfie}</td>
+                            <td style="width:20%;"><img width="100%" style="height:200px" src="{{ asset('reporter_img/${d.selfie}') }}"></td>
                             <td class="text-capitalize">${d.address}</td>
                             <td>
                                 <button id="btn-edit" type="button" data-id="${d.id}" class="btn btn-custon-rounded-three btn-primary"><i class="fa fa-edit" aria-hidden="true"></i> Edit</button>

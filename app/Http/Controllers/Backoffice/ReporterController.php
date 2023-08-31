@@ -37,10 +37,22 @@ class ReporterController extends Controller
         return response()->json($result, $result['code']);
     }
 
-    public function upsertData(ReporterRequest $request)
+    public function upsertData(Request $request)
     {
+        if ($image = $request->file('selfie')) {
+            $destinationPath = public_path('reporter/');
+                $profileImage = random_int(100000, 999999)."-".date('YmdHis') . "." . $image->getClientOriginalExtension();
+                $payload['selfie'] = $profileImage;
+                try {
+                    $image->move($destinationPath, $profileImage);
+                } catch (\Exception $e) {
+                    return redirect()->back()->withErrors(['upload_error' => 'File upload failed']);
+                }
+        } else {
+            unset($payload['selfie']);
+        }
         $id = $request->id | null;
-        $result = $this->reporterRepo->upsertPayload($id, $request->all());
+        $result = $this->reporterRepo->upsertPayload($id, $request->all(), $profileImage);
 
         return response()->json($result, $result['code']);
     }

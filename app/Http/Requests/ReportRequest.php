@@ -17,7 +17,6 @@ class ReportRequest extends FormRequest
     {
         return [
             'reporter_id' => 'required',
-            'report_number' => 'required|unique:reports,report_number'
         ];
     }
 

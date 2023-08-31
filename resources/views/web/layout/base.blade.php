@@ -24,7 +24,7 @@
 <style>
 </style>
 <body>
-
+	@include('sweetalert::alert')
 	<div class="site-mobile-menu site-navbar-target">
 		<div class="site-mobile-menu-header">
 			<div class="site-mobile-menu-close">
@@ -127,88 +127,98 @@
 
 	<div class="section sec-features">
 		<div class="container">
-			<div class="card">
-				<div class="card-body">
-					<div class="row">
-						<div class="text-center">
-							<h3>PELAPOR</h3><hr>
-						</div>
-						<div class="col-md-6">
-							<div class="form-group">
-								<label for="">Nama <span class="text-danger">*</span></label>
-								<input type="text" name="" class="form-control" id="">
+			<form action="{{ route('home') }}" method="POST" enctype="multipart/form-data">
+				@csrf
+				<div class="card">
+					<div class="card-body">
+						<div class="row">
+							<div class="text-center">
+								<h3>PELAPOR</h3><hr>
 							</div>
-							<div class="form-group">
-								<label for="">No Handpone <span class="text-danger">*</span></label>
-								<input type="text" name="" class="form-control" id="">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="">Nama <span class="text-danger">*</span></label>
+									<input type="text" name="reporter_name" class="form-control" id="" required>
+								</div>
+								<div class="form-group">
+									<label for="">No Handpone <span class="text-danger">*</span></label>
+									<input type="text" name="reporter_phone" class="form-control" id=""required>
+								</div>
 							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="form-group">
-								<label for="">Alamat <span class="text-danger">*</span></label>
-								<input type="text" name="" class="form-control" id="">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="">Alamat <span class="text-danger">*</span></label>
+									<input type="text" name="reporter_address" class="form-control" id=""required>
+								</div>
+								<div class="form-group">
+									<label for="">Selfie <span class="text-danger">*</span></label>
+									<input type="file" name="selfie" class="form-control" id="" required>
+								</div>
 							</div>
-							<div class="form-group">
-								<label for="">Selfie <span class="text-danger">*</span></label>
-								<input type="text" name="" class="form-control" id="">
+							<div class="text-center mt-5">
+								<h3>FORMULIR REPORT</h3><hr>
 							</div>
-						</div>
-						<div class="text-center mt-5">
-							<h3>FORMULIR REPORT</h3><hr>
-						</div>
-						<div class="col-md-6">
-							<div class="form-group">
-								<label for=" " style="font-size: 13pt; font-weight: 400px">Tingkat Banjir <span class="text-danger">*</span></label>
-								<select name="report_id" id="report_id" class="form-control">
-									<option value="">-- Pilih --</option>
-								</select>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for=" " style="font-size: 13pt; font-weight: 400px">Tingkat Banjir <span class="text-danger">*</span></label>
+									<select name="flood_id" id="flood_id" class="form-control" required>
+										<option value="" selected disabled>-- Pilih --</option>
+										@foreach ($data['data']  as $item)
+											<option value="{{$item->id}}">{{$item->type}}</option>
+										@endforeach
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="">Level <span class="text-danger">*</span></label>
+									<input type="text" name="level" class="form-control" id="" required>
+								</div>
+								<div class="form-group">
+									<label for="">Priority <span class="text-danger">*</span></label>
+									<input type="text" name="priority" class="form-control" id="" required>
+								</div>
+								<div class="form-group">
+									<label for="">Deskripsi <span class="text-danger">*</span></label>
+									<textarea name="desc" class="form-control" id="" cols="30" rows="10" required></textarea>
+								</div>
 							</div>
-							<div class="form-group">
-								<label for="">Level <span class="text-danger">*</span></label>
-								<input type="text" name="" class="form-control" id="">
-							</div>
-							<div class="form-group">
-								<label for="">Priority <span class="text-danger">*</span></label>
-								<input type="text" name="" class="form-control" id="">
-							</div>
-							<div class="form-group">
-								<label for="">Deskripsi <span class="text-danger">*</span></label>
-								<textarea name="" class="form-control" id="" cols="30" rows="10"></textarea>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="sparkline13-list">
-								<div class="sparkline13-graph">
-									<div class="form-group">
-										<label for="">Location <span class="text-danger">*</span></label>
-										<input type="text" name="" class="form-control" id="">
-									</div>
-									<div class="form-group">
-										<label for="">Longatitude <span class="text-danger">*</span></label>
-										<input type="text" name="" class="form-control" id="">
-									</div>
-									<div class="form-group">
-										<label for="">Gambar <span class="text-danger">*</span></label>
-										<div class="form-group mt-3">
-											<label for="">File 1</label>
-											<input type="file" class="form-control gmbr" name="" id="">
+							<div class="col-md-6">
+								<div class="sparkline13-list">
+									<div class="sparkline13-graph">
+										<div class="form-group">
+											<label for="">Location <span class="text-danger">*</span></label>
+											<input type="text" name="location" class="form-control" id="" required>
 										</div>
 										<div class="form-group">
-											<label for="">File 2</label>
-											<input type="file" class="form-control gmbr" name="" id="">
+											<label for="">Longtitude <span class="text-danger">*</span></label>
+											<input type="text" name="longtitude" class="form-control" id="" required>
 										</div>
 										<div class="form-group">
-											<label for="">File 3</label>
-											<input type="file" class="form-control gmbr" name="" id="">
+											<label for="">Latitude <span class="text-danger">*</span></label>
+											<input type="text" name="latitude" class="form-control" id="" required>
+										</div>
+										<div class="form-group">
+											<label for="">Gambar <span class="text-danger">*</span></label>
+											<div class="form-group mt-3">
+												<label for="">File 1</label>
+												<input type="file" class="form-control gmbr" name="image[]" id="" required>
+											</div>
+											<div class="form-group">
+												<label for="">File 2</label>
+												<input type="file" class="form-control gmbr" name="image[]" id="">
+											</div>
+											<div class="form-group">
+												<label for="">File 3</label>
+												<input type="file" class="form-control gmbr" name="image[]" id="">
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-						</div> 
-						<button class="btn btn-primary col-md-12 col-12 mt-3">SIMPAN</button>
+							</div> 
+							<button type="submit" class="btn btn-primary col-md-12 col-12 mt-3">SIMPAN</button>
+						</div>
 					</div>
 				</div>
-			</div>
+			</form>
 		</div>
 	</div>
 
