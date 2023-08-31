@@ -122,9 +122,7 @@
                                 <tr>
                                     <th data-field="state" data-checkbox="true"></th>
                                     <th data-field="id">No</th>
-                                    <th data-field="name" data-editable="true">Type</th>
-                                    <th data-field="email" data-editable="true">Level</th>
-                                    <th data-field="phone" data-editable="true">Priority</th>
+                                    <th data-field="name" data-editable="true">Code Report</th>
                                     <th data-field="action">Action</th>
                                 </tr>
                             </thead>
