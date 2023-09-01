@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backoffice\AuthController;
 use App\Http\Controllers\Backoffice\DashboardController;
 use App\Http\Controllers\Backoffice\FloodController;
 use App\Http\Controllers\Backoffice\ReportController;
@@ -27,5 +28,6 @@ Route::get('/report-image', [ReportController::class, 'getView'])->name('bo-repo
 Route::get('/detail', [ReportController::class, 'detailView'])->name('detail-report');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/login', [AuthController::class, 'index'])->name('login');
 
 
