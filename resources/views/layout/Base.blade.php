@@ -8,6 +8,7 @@
 
 <body>
     @include('layout.Sidebar')
+    @include('sweetalert::alert')
 
     <div class="all-content-wrapper">
         @include('layout.Nav')
