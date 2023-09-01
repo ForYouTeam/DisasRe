@@ -20,8 +20,6 @@
                             <input type="password" title="Please enter your password" placeholder="******" required="" value="" name="password" id="password" class="form-control">
                             <span class="help-block small">Yur strong password</span>
                         </div>
-                        <div class="checkbox login-checkbox">
-                        </div>
                         <button class="btn btn-success btn-block loginbtn">Login</button>
                     </form>
                 </div>
