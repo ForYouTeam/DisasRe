@@ -46,6 +46,7 @@
 							<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
 								<li class="active"><a href="#home" >Home</a></li>
 								<li><a href="#about">About</a></li>
+								<li><a href="#form">Lapor</a></li>
 								<li><a href="#contact">Contact Us</a></li>
 							</ul>
 						</div>
@@ -71,15 +72,17 @@
 			<div class="row align-items-center justify-content-between pt-5">
 				<div class="col-lg-6 text-center text-lg-start pe-lg-5">
 					<h1 class="heading text-white mb-3" data-aos="fade-up">Selamat Datang di Aplikasi Pelaporan Banjir.</h1>
-					<p class="text-white mb-5" data-aos="fade-up" data-aos-delay="100">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+					<p class="text-white mb-5" data-aos="fade-up" data-aos-delay="100">
+						Memantau, mengidentifikasi, dan merespons banjir yang terjadi di suatu daerah. Ini adalah langkah kunci dalam upaya mitigasi risiko banjir dan penyelamatan kehidupan serta properti. 
+					</p>
 					<div class="align-items-center mb-5 mm" data-aos="fade-up" data-aos-delay="200">
-						<a href="contact.html" class="btn btn-outline-white-reverse me-4">Contact us</a>
-						<a href="https://www.youtube.com/watch?v=Mb1zrW_zra4" class="text-white glightbox">Watch the video</a>
+						<a href="#form" class="btn btn-outline-white-reverse me-4">Lapor</a>
+						<a href="https://www.youtube.com/watch?v=Mb1zrW_zra4" class="text-white glightbox">Contac Kami</a>
 					</div>
 				</div>
 				<div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
 					<div class="img-wrap">
-						<img src="{{asset('web/images/img-1.jpg')}}" alt="Image" class="img-fluid rounded">
+						<img src="{{asset('web/banjir.jpg')}}" alt="Image" class="img-fluid rounded">
 					</div>
 				</div>
 			</div>
@@ -91,21 +94,23 @@
 		<div class="container">
 			<div class="row justify-content-between">
 				<div class="col-lg-7 mb-4 mb-lg-0">
-					<img src="{{asset('web/banjir.jpg')}}" alt="Image" class="img-fluid rounded
+					<img src="{{asset('dashboard.png')}}" alt="Image" class="img-fluid rounded
 					">
 				</div>
 				<div class="col-lg-4 ps-lg-2">
 					<div class="mb-5">
-						<h2 class="text-black h4">Make payment fast and smooth.</h2>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						<h2 class="text-black h4">Informasi Banjir.</h2>
+						<p>
+							Banjir di Sigi Biromaru, Sulawesi Tengah, mengingatkan kita akan kekuatan alam yang tidak terduga. Namun, di tengah bencana ini, kita juga melihat kekuatan solidaritas dan kepedulian manusia yang tumbuh lebih kuat.
+						</p>
 					</div>
 					<div class="d-flex mb-3 service-alt">
 						<div>
-							<span class="bi-wallet-fill me-4"></span>
+							<span class="bi-pie-chart-fill me-4"></span>
 						</div>
 						<div>
-							<h3>Build financial</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							<h3>Laporan</h3>
+							<p>Mengumpulkan data dan informasi tentang tingkat air, dampak, dan pola banjir untuk analisis jangka panjang.</p>
 						</div>
 					</div>
 
@@ -114,8 +119,8 @@
 							<span class="bi-pie-chart-fill me-4"></span>
 						</div>
 						<div>
-							<h3>Invest for the future</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							<h3>Pelapor</h3>
+							<p>Memungkinkan masyarakat untuk mendapatkan informasi tentang situasi banjir yang dapat memengaruhi mereka.</p>
 						</div>
 					</div>
 
@@ -125,7 +130,7 @@
 		</div>
 	</div>
 
-	<div class="section sec-features">
+	<div class="section sec-features" id="form">
 		<div class="container">
 			<form action="{{ route('home') }}" method="POST" enctype="multipart/form-data">
 				@csrf
@@ -142,13 +147,13 @@
 								</div>
 								<div class="form-group">
 									<label for="">No Handpone <span class="text-danger">*</span></label>
-									<input type="text" name="reporter_phone" class="form-control" id=""required>
+									<input type="number" name="reporter_phone" class="form-control" id="" required>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="">Alamat <span class="text-danger">*</span></label>
-									<input type="text" name="reporter_address" class="form-control" id=""required>
+									<input type="text" name="reporter_address" class="form-control" id="" required>
 								</div>
 								<div class="form-group">
 									<label for="">Selfie <span class="text-danger">*</span></label>
@@ -162,7 +167,7 @@
 								<div class="form-group">
 									<label for=" " style="font-size: 13pt; font-weight: 400px">Tingkat Banjir <span class="text-danger">*</span></label>
 									<select name="flood_id" id="flood_id" class="form-control" required>
-										<option value="" selected disabled>-- Pilih --</option>
+										<option value="" selected disabled>-- Pilih Banjir--</option>
 										@foreach ($data['data']  as $item)
 											<option value="{{$item->id}}">{{$item->type}}</option>
 										@endforeach
@@ -170,11 +175,20 @@
 								</div>
 								<div class="form-group">
 									<label for="">Level <span class="text-danger">*</span></label>
-									<input type="text" name="level" class="form-control" id="" required>
+									<select name="level" id="level" class="form-control">
+										<option value="" selected disabled>-- Pilih Level --</option>
+										<option value="kecil">Kecil</option>
+										<option value="sedang">Sedang</option>
+										<option value="besar">Besar</option>
+									</select>
 								</div>
 								<div class="form-group">
 									<label for="">Priority <span class="text-danger">*</span></label>
-									<input type="text" name="priority" class="form-control" id="" required>
+									<select name="priority" id="priority" class="form-control">
+										<option value="" selected disabled>-- Pilih Priority --</option>
+										<option value="aman">Aman</option>
+										<option value="segera">Segera</option>
+									</select>
 								</div>
 								<div class="form-group">
 									<label for="">Deskripsi <span class="text-danger">*</span></label>
@@ -185,17 +199,11 @@
 								<div class="sparkline13-list">
 									<div class="sparkline13-graph">
 										<div class="form-group">
-											<label for="">Location <span class="text-danger">*</span></label>
+											<label for="">Alamat <span class="text-danger">*</span></label>
 											<input type="text" name="location" class="form-control" id="" required>
 										</div>
-										<div class="form-group">
-											<label for="">Longtitude <span class="text-danger">*</span></label>
-											<input type="text" name="longtitude" class="form-control" id="" required>
-										</div>
-										<div class="form-group">
-											<label for="">Latitude <span class="text-danger">*</span></label>
-											<input type="text" name="latitude" class="form-control" id="" required>
-										</div>
+										<input type="hidden" name="longtitude" id="longitude" class="form-control">
+										<input type="hidden" name="latitude" id="latitude" class="form-control">
 										<div class="form-group">
 											<label for="">Gambar <span class="text-danger">*</span></label>
 											<div class="form-group mt-3">
@@ -222,9 +230,143 @@
 		</div>
 	</div>
 
-	<div class="section" id="contact">
-		<h2 class="text-center">CONTACT ME</h2>
-	</div>
+	<div class="section sec-portfolio bg-light pb-5	">
+		<div class="container">
+			<div class="row mb-5">
+				<div class="col-lg-5 mx-auto text-center ">
+					<h2 class="heading text-primary mb-3 aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">PENANGANAN</h2>
+					<p class="mb-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">Penanganan Darurat Bencana banjir dan Tanah Longsor DI beberapa Desa dan Kecamatan Palolo Kabupaten Sigi Provinsi Sulawei Tengah Tahun 2022 </p>
+	
+					<div id="post-slider-nav" data-aos="fade-up" data-aos-delay="200" aria-label="Carousel Navigation" tabindex="0" class="aos-init aos-animate">
+						<button class="btn btn-primary py-2" data-controls="prev" aria-controls="post-slider" tabindex="-1">Prev</button>
+						<button class="btn btn-primary py-2" data-controls="next" aria-controls="post-slider" tabindex="-1">Next</button>
+					</div>
+	
+				</div>
+			</div>
+		</div>
+	
+		<div class="post-slider-wrap aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
+			<div class="tns-outer" id="post-slider-ow"><div class="tns-liveregion tns-visually-hidden" aria-live="polite" aria-atomic="true">slide <span class="current">14 to 16</span>  of 5</div><div id="post-slider-mw" class="tns-ovh"><div class="tns-inner" id="post-slider-iw"><div id="post-slider" class="post-slider  tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal" style="transform: translate3d(-82.3529%, 0px, 0px);"><div class="item tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
+					<a href="case-study.html" class="card">
+						<center><img src="{{asset('sintuwu.png')}}" class="card-img-top" alt="Image" style="max-width: 35rem;"></center>
+						<div class="card-body">
+							<h5 class="card-title">DESA SINTUWU</h5>
+							<p>
+								<ol>
+									<li>
+										<p>Penyelamatan dan Evakuasi Korban Bencana</p>
+									</li>
+									<li>
+										<p>Penetapan Status Keadaan Darurat Bencana</p>
+									</li>
+									<li>
+										<p>Aktivitas Sistem Komando Penanganan Darurat Bencana</p>
+									</li>
+									<li>
+										<p>Perbaikan Darurat
+											Lingkungan yang rusak
+											akiibat bencana</p>
+									</li>
+									<li>
+										<p>Pemulihan Darurat Sarana
+											Prasarana Vital</p>
+									</li>
+								</ol>
+							</p>
+						</div>
+					</a>
+				</div>
+				<div class="item tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
+					<a href="case-study.html" class="card">
+						<center><img src="{{asset('eununi.png')}}" class="card-img-top" alt="Image" style="max-width: 35rem;"></center>
+						<div class="card-body">
+							<h5 class="card-title">DESA UENUNI</h5>
+							<ol>
+								<li>
+									<p>Penyelamatan dan Evakuasi Korban Bencana</p>
+								</li>
+								<li>
+									<p>Penetapan Status Keadaan Darurat Bencana</p>
+								</li>
+								<li>
+									<p>Aktivitas Sistem Komando Penanganan Darurat Bencana</p>
+								</li>
+								<li>
+									<p>Perbaikan Darurat
+										Lingkungan yang rusak
+										akiibat bencana</p>
+								</li>
+								<li>
+									<p>Pemulihan Darurat Sarana
+										Prasarana Vital</p>
+								</li>
+							</ol>
+						</div>
+					</a>
+				</div>
+				<div class="item tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
+					<a href="case-study.html" class="card">
+						<center><img src="{{asset('sungku.png')}}" class="card-img-top" alt="Image" style="max-width: 35rem;"></center>
+						<div class="card-body">
+							<h5 class="card-title">DESA SUNGKU</h5>
+							<p>
+								<ol>
+									<li>
+										<p>Penyelamatan dan Evakuasi Korban Bencana</p>
+									</li>
+									<li>
+										<p>Penetapan Status Keadaan Darurat Bencana</p>
+									</li>
+									<li>
+										<p>Aktivitas Sistem Komando Penanganan Darurat Bencana</p>
+									</li>
+									<li>
+										<p>Perbaikan Darurat
+											Lingkungan yang rusak
+											akiibat bencana</p>
+									</li>
+									<li>
+										<p>Pemulihan Darurat Sarana
+											Prasarana Vital</p>
+									</li>
+								</ol>
+							</p>
+						</div>
+					</a>
+				</div>
+				<div class="item tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
+					<a href="case-study.html" class="card">
+						<center><img src="{{asset('pakuli.png')}}" class="card-img-top" alt="Image" style="max-width: 35rem;"></center>
+						<div class="card-body">
+							<h5 class="card-title">DESA PAKULI</h5>
+							<p>
+								<ol>
+									<li>
+										<p>Penyelamatan dan Evakuasi Korban Bencana</p>
+									</li>
+									<li>
+										<p>Penetapan Status Keadaan Darurat Bencana</p>
+									</li>
+									<li>
+										<p>Aktivitas Sistem Komando Penanganan Darurat Bencana</p>
+									</li>
+									<li>
+										<p>Perbaikan Darurat
+											Lingkungan yang rusak
+											akiibat bencana</p>
+									</li>
+									<li>
+										<p>Pemulihan Darurat Sarana
+											Prasarana Vital</p>
+									</li>
+								</ol>
+							</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
 
 </div>
 
@@ -249,20 +391,14 @@
 				<div class="widget">
 					<h3>Company</h3>
 					<ul class="list-unstyled float-start links">
-						<li><a href="#">About us</a></li>
-						<li><a href="#">Services</a></li>
-						<li><a href="#">Vision</a></li>
-						<li><a href="#">Mission</a></li>
-						<li><a href="#">Terms</a></li>
-						<li><a href="#">Privacy</a></li>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">About Us</a></li>
+						<li><a href="#">Contact</a></li>
 					</ul>
 					<ul class="list-unstyled float-start links">
 						<li><a href="#">Partners</a></li>
 						<li><a href="#">Business</a></li>
 						<li><a href="#">Careers</a></li>
-						<li><a href="#">Blog</a></li>
-						<li><a href="#">FAQ</a></li>
-						<li><a href="#">Creative</a></li>
 					</ul>
 				</div> <!-- /.widget -->
 			</div> <!-- /.col-lg-4 -->
@@ -290,7 +426,6 @@
 
 		<div class="row mt-5">
 			<div class="col-12 text-center">
-
             <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a> Distributed By <a href="https://themewagon.com">ThemeWagon</a> <!-- License information: https://untree.co/license/ -->
             </p>
           </div>
@@ -318,5 +453,15 @@
     <script src="{{asset('web/js/navbar.js')}}"></script>
     <script src="{{asset('web/js/counter.js')}}"></script>
     <script src="{{asset('web/js/custom.js')}}"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
   </body>
+  <script>
+	$(document).ready(function() {
+		navigator.geolocation.getCurrentPosition(function(position) {
+			$('#latitude').val(position.coords.latitude);
+			$('#longitude').val(position.coords.longitude);
+		});
+	});
+  </script>
   </html>
