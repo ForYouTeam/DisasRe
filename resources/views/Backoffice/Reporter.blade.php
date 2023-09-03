@@ -243,7 +243,7 @@
                             <td>${i + 1}</td>
                             <td class="text-capitalize">${d.name}</td>
                             <td class="text-capitalize">${d.phone}</td>
-                            <td style="width:20%;"><img width="100%" style="height:200px" src="{{ asset('reporter/${d.selfie}') }}"></td>
+                            <td style="width:20%;"><img width="100%" style="height:200px" src="{{ asset('reporter-image/${d.selfie}') }}"></td>
                             <td class="text-capitalize">${d.address}</td>
                             <td>
                                 <button id="btn-edit" type="button" data-id="${d.id}" class="btn btn-custon-rounded-three btn-primary"><i class="fa fa-edit" aria-hidden="true"></i> Edit</button>
