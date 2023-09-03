@@ -39,7 +39,7 @@
                                             <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
                                                 <li><a href="#"><span class="edu-icon edu-settings author-log-ic"></span><i class="fa-solid fa-gear text-secondary"></i> Settings</a>
                                                 </li>
-                                                <li><a href="#"><span class="edu-icon edu-locked author-log-ic"></span><i class="fa fa-door-closed text-danger"></i> Log Out</a>
+                                                <li><a href="{{ route('logout.perform') }}"><span class="edu-icon edu-locked author-log-ic"></span><i class="fa fa-door-closed text-danger"></i> Log Out</a>
                                                 </li>
                                             </ul>
                                         </li>
