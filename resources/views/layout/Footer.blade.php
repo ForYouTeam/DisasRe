@@ -40,5 +40,10 @@
 <script src="{{asset('assets/js/editable/bootstrap-editable.js')}}"></script>
 <script src="{{asset('assets/js/editable/xediable-active.js')}}"></script>
 <script src="{{ asset('assets/izitoast/js/iziToast.min.js') }}"></script>
+<script src="{{asset('assets/initial/js/initial.min.js')}}"></script>
+<script>
+    $(document).ready(function(){
+        $('.profile').initial()
+    })
+</script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js" integrity="sha256-2Dbg51yxfa7qZ8CSKqsNxHtph8UHdgbzxXF9ANtyJHo=" crossorigin="anonymous"></script>
-{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script> --}}

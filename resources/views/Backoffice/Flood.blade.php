@@ -80,7 +80,8 @@
 @endsection
 @section('script')
     <script>
-        const baseUrl = `{{ config('app.url') }}`
+
+    const baseUrl = `{{ config('app.url') }}`
 
 
     function clearInput() {
@@ -254,7 +255,7 @@
     }
 
     $(document).ready(function() 
-    {
+    { 
         getAllData()
     })
     </script>
