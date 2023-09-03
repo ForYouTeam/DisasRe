@@ -40,7 +40,7 @@ class ReporterController extends Controller
     public function upsertData(Request $request)
     {
         if ($image = $request->file('selfie')) {
-            $destinationPath = public_path('reporter/');
+            $destinationPath = public_path('reporter-image/');
                 $profileImage = random_int(100000, 999999)."-".date('YmdHis') . "." . $image->getClientOriginalExtension();
                 $payload['selfie'] = $profileImage;
                 try {
