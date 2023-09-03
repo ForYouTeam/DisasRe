@@ -29,3 +29,12 @@
 <script src="{{asset('assets/js/vendor/modernizr-2.8.3.min.js')}}"></script>
 <link rel="stylesheet" href="{{ asset('assets/izitoast/css/iziToast.min.css') }}">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css" integrity="sha256-7jUS+MWeqkFdmW9ozkZ7mPagz+QmMbsBlt+Q3MsE+FU=" crossorigin="anonymous">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+<style>
+  .active{
+    background: #EEEEEE !important;
+  }
+  .active a, .active span {
+    color: blue !important;
+  }
+</style>
