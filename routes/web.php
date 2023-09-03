@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('', [DashboardController::class, 'index'])->name('test');
+Route::get('', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/user', [UserController::class, 'getView'])->name('bo-user');
 Route::get('/flood', [FloodController::class, 'getView'])->name('bo-flood');
 Route::get('/reporter', [ReporterController::class, 'getView'])->name('bo-reporter');

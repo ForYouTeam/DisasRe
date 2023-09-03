@@ -1,6 +1,6 @@
 @extends('layout.Base')
 @section('title')
-    Data Banjir
+    Data Laporan
 @endsection
 @section('style')
 <style>
@@ -24,7 +24,7 @@
             <div class="sparkline13-list">
                 <div class="sparkline13-hd">
                     <div class="main-sparkline13-hd">
-                        <h1>Data <span class="table-project-n">Report</span> Image</h1>
+                        <h1>Table <span class="table-project-n">Report</span></h1>
                         <a href="{{ route('add-report') }}" class="btn btn-primary btn-sm float-right"><i class="fa fa-plus"></i> Tambah</a>
                     </div>
                 </div>
@@ -82,7 +82,7 @@
             } else {
                 $('#tb-body').append(`
                 <tr>
-                    <td colspan="3" style="text-align: center">
+                    <td colspan="4" style="text-align: center">
                         Data tidak ditemukan <br>
                         Silahkan tambah data terlebih dahulu
                     </td>

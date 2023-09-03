@@ -21,7 +21,7 @@ class UserRepository implements UserContract
   {
     try {
 
-      $data = $this->userModel->where('scope', 'admin')->orWhere('scope', 'user')->all();
+      $data = $this->userModel->where('scope', 'admin')->orWhere('scope', 'user')->get();
 
       return $this->success($data, "success getting data");
 

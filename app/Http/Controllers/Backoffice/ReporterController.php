@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backoffice;
 use App\Contracts\ReporterContract;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ReporterRequest;
+use App\Http\Requests\ReportRequest;
 use App\Models\Reporter;
 use App\Repositories\ReporterRepository;
 use Illuminate\Http\Request;
@@ -37,7 +38,7 @@ class ReporterController extends Controller
         return response()->json($result, $result['code']);
     }
 
-    public function upsertData(Request $request)
+    public function upsertData(ReporterRequest $request)
     {
         if ($image = $request->file('selfie')) {
             $destinationPath = public_path('reporter-image/');
@@ -51,8 +52,9 @@ class ReporterController extends Controller
         } else {
             unset($payload['selfie']);
         }
+        $data = $request->except('_token');
         $id = $request->id | null;
-        $result = $this->reporterRepo->upsertPayload($id, $request->all(), $profileImage);
+        $result = $this->reporterRepo->upsertPayload($id, $data, $profileImage,);
 
         return response()->json($result, $result['code']);
     }

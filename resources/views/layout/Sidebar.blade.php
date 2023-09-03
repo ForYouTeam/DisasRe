@@ -9,34 +9,35 @@
                 <ul class="metismenu" id="menu1">
                     <strong style="color: rgba(0, 0, 0, 0.438); padding: 15px; margin-bottom: -7px; margin-top: 20px" >DASHBOARD</strong>
                     <li>
-                        <a title="Landing Page" href="events.html" aria-expanded="false">
+                        <a title="Landing Page" href="{{route('dashboard')}}" aria-expanded="false">
                             <span class="educate-icon educate-home icon-wrap"></span>
                             Home
                         </a>
                     </li>
                     <strong style="color: rgba(0, 0, 0, 0.438); padding: 15px; margin-bottom: -10px" >MENU</strong>
-                    <li class="active">
-                        <a title="Landing Page" href="" aria-expanded="false">
+                    <li>
+                        <a title="Landing Page" href="{{route('bo-report-image')}}" aria-expanded="false">
                             <span class="educate-icon educate-course icon-wrap"></span>
-                           Report
+                           Laporan
                         </a>
                     </li>
                     <li>
                         <a title="Landing Page" href="{{route('bo-reporter')}}" aria-expanded="false">
                             <span class="educate-icon educate-course icon-wrap"></span>
-                           Reporter
+                           Pelapor
                         </a>
                     </li>
                     <li>
                         <a title="Landing Page" href="{{route('bo-flood')}}" aria-expanded="false">
                             <span class="educate-icon educate-course icon-wrap"></span>
-                           Flood
+                           Banjir
                         </a>
                     </li>
+                    <strong style="color: rgba(0, 0, 0, 0.438); padding: 15px; margin-bottom: -10px" >USER</strong>
                     <li>
-                        <a title="Landing Page" href="{{route('bo-report-image')}}" aria-expanded="false">
+                        <a title="Landing Page" href="{{route('bo-user')}}" aria-expanded="false">
                             <span class="educate-icon educate-course icon-wrap"></span>
-                           Foto Report
+                           Akun
                         </a>
                     </li>
                 </ul>

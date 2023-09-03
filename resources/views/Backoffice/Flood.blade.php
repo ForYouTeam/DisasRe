@@ -7,7 +7,7 @@
     <div class="sparkline13-list">
         <div class="sparkline13-hd">
             <div class="main-sparkline13-hd">
-                <h1>Projects <span class="table-project-n">Data</span> Table</h1>
+                <h1>Table <span class="table-project-n"> Banjir</span></h1>
                 <button type="button" id="btn-add" class="btn btn-custon-rounded-three btn-primary" style="margin-bottom: 15px; margin-top: 10px"><i class="fa fa-plus" aria-hidden="true"></i> Tambah Data</button>
             </div>
         </div>
@@ -53,18 +53,18 @@
                         <input type="hidden" name="id" id="id">
                         <div class="form-group-inner">
                             <label style="float: left">Type</label>
-                            <input type="text" name="type" id="type" class="form-control" placeholder="Input disini">
-                            <span class="text-danger" id="alert-type"></span>
+                            <input type="text" name="type" id="type" class="form-control val" placeholder="Input disini">
+                            <span class="text-danger alrt" id="alert-type"></span>
                         </div>
                         <div class="form-group-inner">
                             <label style="float: left">Level</label>
-                            <input type="text" name="level" id="level" class="form-control" placeholder="Input disini">
-                            <span class="text-danger" id="alert-level"></span>
+                            <input type="text" name="level" id="level" class="form-control val" placeholder="Input disini">
+                            <span class="text-danger alrt" id="alert-level"></span>
                         </div>
                         <div class="form-group-inner">
                             <label style="float: left">Priority</label>
-                            <input type="text" name="priority" id="priority" class="form-control" placeholder="Input disini">
-                            <span class="text-danger" id="alert-priority"></span>
+                            <input type="text" name="priority" id="priority" class="form-control val" placeholder="Input disini">
+                            <span class="text-danger alrt" id="alert-priority"></span>
                         </div>
                     </form>
                 </div>
@@ -84,14 +84,12 @@
 
 
     function clearInput() {
-        $('#id'            ).val ('')
-        $('#_jabatan'      ).val ('')
-        $('#alert_jabatan' ).html('')
-        $('#deskripsi'     ).val ('')
-        $('#alertdeskripsi').html('')
+        $('.val'      ).val ('')
+        $('.alrt' ).html('')
     }
 
     $(document).on('click', '#btn-add', function() {
+        clearInput()
         $('#modal-data').modal('show')
     })
 
