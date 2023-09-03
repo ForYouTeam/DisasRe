@@ -15,9 +15,9 @@
             <div class="datatable-dashv1-list custom-datatable-overright">
                 <div id="toolbar">
                     <select class="form-control dt-tb">
-                        <option value="">Export Basic</option>
-                        <option value="all">Export All</option>
-                        <option value="selected">Export Selected</option>
+                        <option value="">Export</option>
+                        <option value="all">Export Semua</option>
+                        <option value="selected">Export Pilihan</option>
                     </select>
                 </div>
                 <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
@@ -26,10 +26,10 @@
                         <tr>
                             <th data-field="state" data-checkbox="true"></th>
                             <th data-field="id">No</th>
-                            <th data-field="name" data-editable="true">Name</th>
+                            <th data-field="name" data-editable="true">Nama</th>
                             <th data-field="email" data-editable="true">Username</th>
                             <th data-field="phone" data-editable="true">Role</th>
-                            <th data-field="action">Action</th>
+                            <th data-field="action">Aksi</th>
                         </tr>
                     </thead>
                     <tbody id="tb-body">
@@ -52,7 +52,7 @@
                     <form action="#">
                         <input type="hidden" name="id" id="id">
                         <div class="form-group-inner">
-                            <label style="float: left">Name</label>
+                            <label style="float: left">Nama</label>
                             <input type="text" name="name" id="name" class="form-control val" placeholder="Input disini">
                             <span class="text-danger alrt" id="alert-name"></span>
                         </div>
