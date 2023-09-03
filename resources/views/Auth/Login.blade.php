@@ -3,24 +3,26 @@
 <div class="error-pagewrap">
     <div class="error-page-int">
         <div class="text-center m-b-md custom-login">
-            <h3>PLEASE LOGIN TO APP</h3>
-            <p>This is the best app ever!</p>
+            <h3>LOGIN</h3>
+            <p>Silahkan login terlebih dahulu</p>
         </div>
         <div class="content-error">
+            @if ($errors->has('email'))
+                    <span class="text-danger text-left">{{ $errors->first('email') }}</span>
+                  @endif
             <div class="hpanel">
                 <div class="panel-body">
-                    <form action="#" id="loginForm">
+                    <form action="{{ route('login') }}" method="POST">
+                        @csrf
                         <div class="form-group">
                             <label class="control-label" for="username">Username</label>
-                            <input type="text" placeholder="example@gmail.com" title="Please enter you username" required="" value="" name="username" id="username" class="form-control">
-                            <span class="help-block small">Your unique username to app</span>
+                            <input type="text" placeholder="example@gmail.com" title="Please enter you username" value="" name="username" id="username" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="password">Password</label>
-                            <input type="password" title="Please enter your password" placeholder="******" required="" value="" name="password" id="password" class="form-control">
-                            <span class="help-block small">Yur strong password</span>
+                            <input type="password" title="Please enter your password" placeholder="******" value="" name="password" id="password" class="form-control" required>
                         </div>
-                        <button class="btn btn-success btn-block loginbtn">Login</button>
+                        <button type="submit" class="btn btn-success btn-block loginbtn">Login</button>
                     </form>
                 </div>
             </div>
