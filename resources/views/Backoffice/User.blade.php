@@ -1,10 +1,14 @@
 @extends('layout.Base')
+@section('title')
+    Data Akun
+@endsection
 @section('content')
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <div class="sparkline13-list">
         <div class="sparkline13-hd">
             <div class="main-sparkline13-hd">
-                <h1>Projects <span class="table-project-n">Data</span> Table</h1>
+                <h1>Table <span class="table-project-n"> Akun</span></h1>
+                <button type="button" id="btn-add" class="btn btn-custon-rounded-three btn-primary" style="margin-bottom: 15px; margin-top: 10px"><i class="fa fa-plus" aria-hidden="true"></i> Tambah Data</button>
             </div>
         </div>
         <div class="sparkline13-graph">
@@ -21,316 +25,245 @@
                     <thead>
                         <tr>
                             <th data-field="state" data-checkbox="true"></th>
-                            <th data-field="id">ID</th>
-                            <th data-field="name" data-editable="true">Task</th>
-                            <th data-field="email" data-editable="true">Email</th>
-                            <th data-field="phone" data-editable="true">Phone</th>
-                            <th data-field="complete">Completed</th>
-                            <th data-field="task" data-editable="true">Task</th>
-                            <th data-field="date" data-editable="true">Date</th>
-                            <th data-field="price" data-editable="true">Price</th>
+                            <th data-field="id">No</th>
+                            <th data-field="name" data-editable="true">Name</th>
+                            <th data-field="email" data-editable="true">Username</th>
+                            <th data-field="phone" data-editable="true">Role</th>
                             <th data-field="action">Action</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td>1</td>
-                            <td>Web Development</td>
-                            <td>admin@uttara.com</td>
-                            <td>+8801962067309</td>
-                            <td class="datatable-ct"><span class="pie">1/6</span>
-                            </td>
-                            <td>10%</td>
-                            <td>Jul 14, 2017</td>
-                            <td>$5455</td>
-                            <td class="datatable-ct"><i class="fa fa-check"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>2</td>
-                            <td>Graphic Design</td>
-                            <td>fox@itpark.com</td>
-                            <td>+8801762067304</td>
-                            <td class="datatable-ct"><span class="pie">230/360</span>
-                            </td>
-                            <td>70%</td>
-                            <td>fab 2, 2017</td>
-                            <td>$8756</td>
-                            <td class="datatable-ct"><i class="fa fa-check"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>3</td>
-                            <td>Software Development</td>
-                            <td>gumre@hash.com</td>
-                            <td>+8801862067308</td>
-                            <td class="datatable-ct"><span class="pie">0.42/1.461</span>
-                            </td>
-                            <td>5%</td>
-                            <td>Seb 5, 2017</td>
-                            <td>$9875</td>
-                            <td class="datatable-ct"><i class="fa fa-check"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>4</td>
-                            <td>Woocommerce</td>
-                            <td>kyum@frok.com</td>
-                            <td>+8801962066547</td>
-                            <td class="datatable-ct"><span class="pie">2,7</span>
-                            </td>
-                            <td>15%</td>
-                            <td>Oct 10, 2017</td>
-                            <td>$3254</td>
-                            <td class="datatable-ct"><i class="fa fa-check"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>5</td>
-                            <td>Joomla</td>
-                            <td>jams@game.com</td>
-                            <td>+8801962098745</td>
-                            <td class="datatable-ct"><span class="pie">200,133</span>
-                            </td>
-                            <td>80%</td>
-                            <td>Nov 20, 2017</td>
-                            <td>$58745</td>
-                            <td class="datatable-ct"><i class="fa fa-check"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>6</td>
-                            <td>Wordpress</td>
-                            <td>flat@yem.com</td>
-                            <td>+8801962254781</td>
-                            <td class="datatable-ct"><span class="pie">0.42,1.051</span>
-                            </td>
-                            <td>30%</td>
-                            <td>Aug 25, 2017</td>
-                            <td>$789879</td>
-                            <td class="datatable-ct"><i class="fa fa-check"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>7</td>
-                            <td>Ecommerce</td>
-                            <td>hasan@wpm.com</td>
-                            <td>+8801962254863</td>
-                            <td class="datatable-ct"><span class="pie">2,7</span>
-                            </td>
-                            <td>15%</td>
-                            <td>July 17, 2017</td>
-                            <td>$21424</td>
-                            <td class="datatable-ct"><i class="fa fa-check"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>8</td>
-                            <td>Android Apps</td>
-                            <td>ATM@devep.com</td>
-                            <td>+8801962875469</td>
-                            <td class="datatable-ct"><span class="pie">2,7</span>
-                            </td>
-                            <td>15%</td>
-                            <td>June 11, 2017</td>
-                            <td>$78978</td>
-                            <td class="datatable-ct"><i class="fa fa-check"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>9</td>
-                            <td>Prestashop</td>
-                            <td>presta@Prest.com</td>
-                            <td>+8801962067524</td>
-                            <td class="datatable-ct"><span class="pie">2,7</span>
-                            </td>
-                            <td>15%</td>
-                            <td>May 9, 2017</td>
-                            <td>$45645</td>
-                            <td class="datatable-ct"><i class="fa fa-check"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>10</td>
-                            <td>Game Development</td>
-                            <td>Dev@game.com</td>
-                            <td>+8801962067457</td>
-                            <td class="datatable-ct"><span class="pie">2,7</span>
-                            </td>
-                            <td>15%</td>
-                            <td>April 5, 2017</td>
-                            <td>$4564545</td>
-                            <td class="datatable-ct"><i class="fa fa-check"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>11</td>
-                            <td>Angular Js</td>
-                            <td>gular@angular.com</td>
-                            <td>+8801962067124</td>
-                            <td class="datatable-ct"><span class="pie">2,7</span>
-                            </td>
-                            <td>15%</td>
-                            <td>Dec 1, 2017</td>
-                            <td>$645455</td>
-                            <td class="datatable-ct"><i class="fa fa-check"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>12</td>
-                            <td>Opencart</td>
-                            <td>open@cart.com</td>
-                            <td>+8801962067587</td>
-                            <td class="datatable-ct"><span class="pie">2,7</span>
-                            </td>
-                            <td>15%</td>
-                            <td>Jan 6, 2017</td>
-                            <td>$78978</td>
-                            <td class="datatable-ct"><i class="fa fa-check"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>13</td>
-                            <td>Education</td>
-                            <td>john@example.com</td>
-                            <td>+8801962067471</td>
-                            <td class="datatable-ct"><span class="pie">2,7</span>
-                            </td>
-                            <td>15%</td>
-                            <td>Feb 6, 2016</td>
-                            <td>$456456</td>
-                            <td class="datatable-ct"><i class="fa fa-check"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>14</td>
-                            <td>Construction</td>
-                            <td>mary@example.com</td>
-                            <td>+8801962012457</td>
-                            <td class="datatable-ct"><span class="pie">2,7</span>
-                            </td>
-                            <td>15%</td>
-                            <td>Jan 6, 2016</td>
-                            <td>$87978</td>
-                            <td class="datatable-ct"><i class="fa fa-check"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>15</td>
-                            <td>Real Estate</td>
-                            <td>july@example.com</td>
-                            <td>+8801962067309</td>
-                            <td class="datatable-ct"><span class="pie">2,7</span>
-                            </td>
-                            <td>15%</td>
-                            <td>Dec 1, 2016</td>
-                            <td>$454554</td>
-                            <td class="datatable-ct"><i class="fa fa-check"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>16</td>
-                            <td>Personal Regume</td>
-                            <td>john@example.com</td>
-                            <td>+8801962067306</td>
-                            <td class="datatable-ct"><span class="pie">2,7</span>
-                            </td>
-                            <td>15%</td>
-                            <td>May 9, 2016</td>
-                            <td>$564555</td>
-                            <td class="datatable-ct"><i class="fa fa-check"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>17</td>
-                            <td>Admin Template</td>
-                            <td>mary@example.com</td>
-                            <td>+8801962067305</td>
-                            <td class="datatable-ct"><span class="pie">2,7</span>
-                            </td>
-                            <td>15%</td>
-                            <td>June 11, 2016</td>
-                            <td>$454565</td>
-                            <td class="datatable-ct"><i class="fa fa-check"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>18</td>
-                            <td>FrontEnd</td>
-                            <td>july@example.com</td>
-                            <td>+8801962067304</td>
-                            <td class="datatable-ct"><span class="pie">2,7</span>
-                            </td>
-                            <td>15%</td>
-                            <td>May 9, 2015</td>
-                            <td>$456546</td>
-                            <td class="datatable-ct"><i class="fa fa-check"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>19</td>
-                            <td>Backend</td>
-                            <td>john@range.com</td>
-                            <td>+8801962067303</td>
-                            <td class="datatable-ct"><span class="pie">2,7</span>
-                            </td>
-                            <td>15%</td>
-                            <td>Feb 9, 2014</td>
-                            <td>$564554</td>
-                            <td class="datatable-ct"><i class="fa fa-check"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>20</td>
-                            <td>Java Advance</td>
-                            <td>lamon@ghs.com</td>
-                            <td>+8801962067302</td>
-                            <td class="datatable-ct"><span class="pie">2,7</span>
-                            </td>
-                            <td>15%</td>
-                            <td>July 6, 2014</td>
-                            <td>$789889</td>
-                            <td class="datatable-ct"><i class="fa fa-check"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>21</td>
-                            <td>Jquery Advance</td>
-                            <td>hasad@uth.com</td>
-                            <td>+8801962067301</td>
-                            <td class="datatable-ct"><span class="pie">2,7</span>
-                            </td>
-                            <td>15%</td>
-                            <td>Jun 6, 2013</td>
-                            <td>$4565656</td>
-                            <td class="datatable-ct"><i class="fa fa-check"></i>
-                            </td>
-                        </tr>
+                    <tbody id="tb-body">
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
 </div>
+{{-- Modal --}}
+<div id="modal-data" class="modal modal-edu-general default-popup-PrimaryModal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-close-area modal-close-df">
+                <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+            </div>
+            <div class="modal-body">
+                <h4 class="" id="modal-title">Formulir Tambah Data</h4><hr>
+                <div class="" style="margin-top: 20px">
+                    <form action="#">
+                        <input type="hidden" name="id" id="id">
+                        <div class="form-group-inner">
+                            <label style="float: left">Name</label>
+                            <input type="text" name="name" id="name" class="form-control" placeholder="Input disini">
+                            <span class="text-danger" id="alert-type"></span>
+                        </div>
+                        <div class="form-group-inner">
+                            <label style="float: left">Username</label>
+                            <input type="text" name="username" id="username" class="form-control" placeholder="Input disini">
+                            <span class="text-danger" id="alert-level"></span>
+                        </div>
+                        <div class="form-group-inner">
+                            <label style="float: left">Password</label>
+                            <input type="password" name="password" id="password" class="form-control" placeholder="Input disini">
+                            <span class="text-danger" id="alert-priority"></span>
+                        </div>
+                        <div class="form-group-inner">
+                            <label style="float: left">Role</label>
+                            <input type="text" name="scope" id="scope" class="form-control" placeholder="Input disini">
+                            <span class="text-danger" id="alert-priority"></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button data-dismiss="modal" class="btn btn-custon-four btn-md btn-danger">Cancel</button>
+                <button onclick="postData()" class="btn btn-custon-four btn-md btn-primary">Simpan</button>
+            </div>
+        </div>
+    </div>
+</div>
+{{-- End Modal --}}
+@endsection
+@section('script')
+    <script>
+        const baseUrl = `{{ config('app.url') }}`
+
+
+    function clearInput() {
+        $('#id'            ).val ('')
+        $('#_jabatan'      ).val ('')
+        $('#alert_jabatan' ).html('')
+        $('#deskripsi'     ).val ('')
+        $('#alertdeskripsi').html('')
+    }
+
+    $(document).on('click', '#btn-add', function() {
+        $('#modal-data').modal('show')
+    })
+
+
+    $(document).on('click', '#btn-del', function() {
+        let dataId = $(this).data('id')
+        Swal.fire({
+            title: 'Apakah anda yakin?',
+            text: "Data tidak dapat dipulihkan!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, hapus!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: 'Waiting',
+                    text: "Processing Data!",
+                    allowOutsideClick: false,
+                    didOpen: () => {
+                        Swal.showLoading()
+                    }
+                })
+                $.ajax({
+                    url: `${baseUrl}/api/v1/users/${dataId}`,
+                    type: 'delete',
+                    success: function(result) {
+                        let data = result.data;
+                        setTimeout(() => {
+                            Swal.close()
+                            getAllData()
+                            iziToast.success({
+                                title: 'Sukses',
+                                message: 'Data berhasil dihapus!',
+                                position: 'topRight'
+                            });
+                        }, 500);
+                    },
+                    error: function(result) {
+                        let data = result.responseJSON
+                        Swal.fire({
+                            icon     : 'error' ,
+                            title    : 'Error' ,
+                            text     : data.response.message,
+                            position : 'topRight'
+                        });
+                    }
+                });
+            }
+        })
+    })
+
+    $(document).on('click', '#btn-edit', function() {
+        clearInput()
+        $('#modal-title').html('Formulir Edit Data')
+        let dataId = $(this).data('id')
+        $.get(`${baseUrl}/api/v1/users/${dataId}`, (res) => {
+            let data = res.data
+            $.each(data, (i,d) => {
+                if (i != "created_at" && i != "updated_at") {
+                    $(`#${i}`).val(d)
+                }
+            })
+            $('#modal-data').modal('show')
+        }).fail((err) => {
+            iziToast.error({
+                title   : 'Error'                    ,
+                message : 'Server sedang maintenance',
+                position: 'topRight'
+            });
+        })
+    })
+
+    function postData() {
+        const data = {
+            id       : $('#id'       ).val(),
+            name     : $('#name'     ).val(),
+            username : $('#username' ).val(),
+            password : $('#password' ).val(),
+            scope    : $('#scope'    ).val(),
+        }
+
+        $.ajax({
+            url        : `${baseUrl}/api/v1/users`,
+            method     : "POST"                   ,
+            data       : data                     ,
+            success: function(res) {
+                $('#modal-data').modal('hide')
+                Swal.fire({
+                    title            : 'Success'               ,
+                    text             : 'Data Berhasil Dihapus.',
+                    icon             : 'success'               ,
+                    cancelButtonColor: '#d33'                  ,
+                    confirmButtonText: 'Oke'
+                });
+
+                getAllData()
+            },
+            error: function(err) {
+                if (err.status = 422) {
+                    let data = err.responseJSON
+                    let errorRes = data.errors;
+                    if (errorRes.length >= 1) {
+                        $.each(errorRes.data, (i, d) => {
+                            $(`#alert-${i}`).html(d)
+                        })
+                    }
+                } else {
+                    iziToast.error({
+                        title   : 'Error'                    ,
+                        message : 'Server sedang maintenance',
+                        position: 'topRight'
+                    });
+                }
+            },
+            dataType   : "json"
+        });
+    }
+
+    function getAllData() {
+        // $('#table-data').DataTable().destroy()
+        $.get(`${baseUrl}/api/v1/users`, (res) => {
+            let data = res.data
+
+            $('#tb-body').html('')
+            if (data.length > 0) {
+                $.each(data, (i,d) => {
+                        $('#tb-body').append(`
+                        <tr>
+                            <td></td>
+                            <td>${i + 1}</td>
+                            <td class="text-capitalize">${d.name}</td>
+                            <td class="text-capitalize">${d.username}</td>
+                            <td class="text-capitalize">${d.scope}</td>
+                            <td>
+                                <button id="btn-edit" type="button" data-id="${d.id}" class="btn btn-custon-rounded-three btn-primary"><i class="fa fa-edit" aria-hidden="true"></i> Edit</button>
+                                <button id="btn-del" type="button" data-id="${d.id}" class="btn btn-custon-rounded-three btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Hapus</button>
+                            </td>
+                        </tr>
+                    `)
+                })
+            } else {
+                $('#tb-body').append(`
+                <tr>
+                    <td colspan="6" style="text-align: center">
+                        Data tidak ditemukan <br>
+                        Silahkan tambah data terlebih dahulu
+                    </td>
+                </tr>
+            `)
+            }
+
+            // $('#table-data').DataTable();
+        })
+        .fail((err) => {
+            iziToast.error({
+                title   : 'Error'                    ,
+                message : 'Server sedang maintenance',
+                position: 'topRight'
+            });
+        })
+    }
+
+    $(document).ready(function() 
+    {
+        getAllData()
+    })
+    </script>
 @endsection

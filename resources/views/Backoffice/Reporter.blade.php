@@ -1,13 +1,13 @@
 @extends('layout.Base')
 @section('title')
-    Data Banjir
+    Data Pelapor
 @endsection
 @section('content')
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <div class="sparkline13-list">
         <div class="sparkline13-hd">
             <div class="main-sparkline13-hd">
-                <h1>Projects <span class="table-project-n">Data</span> Table</h1>
+                <h1>Table<span class="table-project-n"> Pelapor</span></h1>
                 <button type="button" id="btn-add" class="btn btn-custon-rounded-three btn-primary" style="margin-bottom: 15px; margin-top: 10px"><i class="fa fa-plus" aria-hidden="true"></i> Tambah Data</button>
             </div>
         </div>
@@ -243,7 +243,7 @@
                             <td>${i + 1}</td>
                             <td class="text-capitalize">${d.name}</td>
                             <td class="text-capitalize">${d.phone}</td>
-                            <td style="width:20%;"><img width="100%" style="height:200px" src="{{ asset('reporter_img/${d.selfie}') }}"></td>
+                            <td style="width:20%;"><img width="100%" style="height:200px" src="{{ asset('reporter/${d.selfie}') }}"></td>
                             <td class="text-capitalize">${d.address}</td>
                             <td>
                                 <button id="btn-edit" type="button" data-id="${d.id}" class="btn btn-custon-rounded-three btn-primary"><i class="fa fa-edit" aria-hidden="true"></i> Edit</button>

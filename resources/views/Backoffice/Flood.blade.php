@@ -7,7 +7,7 @@
     <div class="sparkline13-list">
         <div class="sparkline13-hd">
             <div class="main-sparkline13-hd">
-                <h1>Projects <span class="table-project-n">Data</span> Table</h1>
+                <h1>Table <span class="table-project-n"> Banjir</span></h1>
                 <button type="button" id="btn-add" class="btn btn-custon-rounded-three btn-primary" style="margin-bottom: 15px; margin-top: 10px"><i class="fa fa-plus" aria-hidden="true"></i> Tambah Data</button>
             </div>
         </div>

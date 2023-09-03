@@ -1,6 +1,6 @@
 @extends('layout.Base')
 @section('title')
-    Detail Data Report
+    Detail Data laporan
 @endsection
 @section('style')
 @endsection
@@ -10,7 +10,7 @@
         <div class="col-md-6">
             <div class="sparkline13-list">
                 <div class="main-sparkline13-hd">
-                    <h1><span class="table-project-n">Data</span> Report</h1><hr>
+                    <h1><span class="table-project-n">Data</span> Laporan</h1><hr>
                 </div>
                 <form action="">
                     <div class="form-group">
@@ -59,10 +59,10 @@
                     <div class="form-group">
                         <label for="">Gambar </label>
                         @foreach ($data['photo']['data'] as $item)
-                            <img src="{{ asset('images/'.$item->path) }}" width="200px" height="100px" alt="">
+                            <img src="{{ asset('images/'.$item->path) }}" alt="" style="width: 9rem; height: 10rem; margin-left: 10px;">
                         @endforeach
                     </div>
-                    <button class="btn btn-danger" style="margin-top: ">Kembali</button>
+                    <a href="{{route('bo-report-image')}}" class="btn btn-danger" style="margin-top:" >Kembali</a>
                 </div>
             </div>
         </div>    
