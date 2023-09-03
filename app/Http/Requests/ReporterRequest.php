@@ -17,8 +17,8 @@ class ReporterRequest extends FormRequest
     {
         return [
             'name' => 'required|max:150',
-            'phone' => 'required|max:13',
-            'selfie' => 'required|max:255',
+            'phone' => 'required|numeric',
+            'selfie' => 'required',
             'address' => 'required'
         ];
     }

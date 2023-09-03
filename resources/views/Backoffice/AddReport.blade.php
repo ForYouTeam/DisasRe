@@ -36,22 +36,25 @@
                         <label for="">Level <span class="text-danger">*</span></label>
                         <select name="level" id="level" class="form-control" required>
                             <option value="" selected disabled>Pilih</option>
-                            <option value="Kecil">Kecil</option>
-                            <option value="Sedang">Sedang</option>
-                            <option value="Besar">Besar</option>
+                            <option value="ringan">Riangan</option>
+                            <option value="sedang">Sedang</option>
+                            <option value="berat">Berat</option>
+                            <option value="extream">Extream</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="">prioritas <span class="text-danger">*</span></label>
+                        <label for="">Prioritas <span class="text-danger">*</span></label>
                         <select name="priority" id="priority" class="form-control" required>
                             <option value="" selected disabled>Pilih</option>
-                            <option value="Aman">Aman</option>
-                            <option value="Segera">Segera</option>
+                            <option value="recovery">Recovery</option>
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="">Deskripsi <span class="text-danger">*</span></label>
-                        <textarea name="desc" class="form-control" id="desc" cols="30" rows="10" required></textarea>
+                        <textarea name="desc" class="form-control" id="desc" cols="30" rows="10" placeholder="Input disini" required></textarea>
                     </div>
                 
             </div>
@@ -65,16 +68,16 @@
                 </div>
                 <div class="sparkline13-graph">
                     <div class="form-group">
-                        <label for="">Lokasi <span class="text-danger">*</span></label>
-                        <input type="text" name="location" class="form-control" id="location" required>
+                        <label for="">Alamat <span class="text-danger">*</span></label>
+                        <input type="text" name="location" class="form-control" id="location" placeholder="Input disini" required>
                     </div>
                     <div class="form-group">
                         <label for="">Longtitude <span class="text-danger">*</span></label>
-                        <input type="number" name="longtitude" class="form-control" id="longtitude" required>
+                        <input type="number" name="longtitude" class="form-control" id="longtitude" placeholder="Input disini" required>
                     </div>
                     <div class="form-group">
                         <label for="">latitude <span class="text-danger">*</span></label>
-                        <input type="number" name="latitude" class="form-control" id="longtitude" required>
+                        <input type="number" name="latitude" class="form-control" id="longtitude" placeholder="Input disini" required>
                     </div>
                     <div id="wrapper">
                         <label for="upload_file" class="custom-file-label"></i>Gambar</label>
