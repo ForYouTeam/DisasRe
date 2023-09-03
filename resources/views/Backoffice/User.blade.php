@@ -53,23 +53,27 @@
                         <input type="hidden" name="id" id="id">
                         <div class="form-group-inner">
                             <label style="float: left">Name</label>
-                            <input type="text" name="name" id="name" class="form-control" placeholder="Input disini">
-                            <span class="text-danger" id="alert-type"></span>
+                            <input type="text" name="name" id="name" class="form-control val" placeholder="Input disini">
+                            <span class="text-danger alrt" id="alert-name"></span>
                         </div>
                         <div class="form-group-inner">
                             <label style="float: left">Username</label>
-                            <input type="text" name="username" id="username" class="form-control" placeholder="Input disini">
-                            <span class="text-danger" id="alert-level"></span>
+                            <input type="text" name="username" id="username" class="form-control val" placeholder="Input disini">
+                            <span class="text-danger alrt" id="alert-username"></span>
                         </div>
                         <div class="form-group-inner">
                             <label style="float: left">Password</label>
-                            <input type="password" name="password" id="password" class="form-control" placeholder="Input disini">
-                            <span class="text-danger" id="alert-priority"></span>
+                            <input type="password" name="password" id="password" class="form-control val" placeholder="Input disini">
+                            <span class="text-danger alrt" id="alert-password"></span>
                         </div>
                         <div class="form-group-inner">
                             <label style="float: left">Role</label>
-                            <input type="text" name="scope" id="scope" class="form-control" placeholder="Input disini">
-                            <span class="text-danger" id="alert-priority"></span>
+                            <select class="form-control val" name="scope" id="scope">
+                                <option selected disabled value="set">-- Pilih --</option>
+                                <option value="admin">Admin</option>
+                                <option value="superadmin">Super Admin</option>
+                            </select>
+                            <span class="text-danger alrt" id="alert-scope"></span>
                         </div>
                     </form>
                 </div>
@@ -89,14 +93,13 @@
 
 
     function clearInput() {
-        $('#id'            ).val ('')
-        $('#_jabatan'      ).val ('')
-        $('#alert_jabatan' ).html('')
-        $('#deskripsi'     ).val ('')
-        $('#alertdeskripsi').html('')
+        $('.val'  ).val  ('')
+        $('.alrt' ).html ('')
+        $('#scope' ).val('set')
     }
 
     $(document).on('click', '#btn-add', function() {
+        clearInput()
         $('#modal-data').modal('show')
     })
 

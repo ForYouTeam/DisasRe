@@ -55,27 +55,26 @@
                         <input type="hidden" name="id" id="id">
                         <div class="form-group-inner">
                             <label style="float: left">Nama</label>
-                            <input type="text" name="name" id="name" class="form-control" placeholder="Input disini">
-                            <span class="text-danger" id="alert-name"></span>
+                            <input type="text" name="name" id="name" class="form-control val" placeholder="Input disini">
+                            <span class="text-danger alrt" id="alert-name"></span>
                         </div>
                         <div class="form-group-inner">
                             <label style="float: left">No Hp</label>
-                            <input type="text" name="phone" id="phone" class="form-control" placeholder="Input disini">
-                            <span class="text-danger" id="alert-phone"></span>
-
-                        </div>
-                        <div class="form-group-inner">
-                            <label style="float: left">Selfie</label>
-                            <input type="file" name="selfie" id="selfie" class="form-control">
-                            <span class="text-danger" id="alert-selfie"></span>
+                            <input type="text" name="phone" id="phone" class="form-control val" placeholder="Input disini">
+                            <span class="text-danger alrt" id="alert-phone"></span>
 
                         </div>
                         <div class="form-group-inner">
                             <label style="float: left">Alamat</label>
-                            <input type="text" name="address" id="address" class="form-control" placeholder="Input disini">
-                            <span class="text-danger" id="alert-address"></span>
-
+                            <textarea name="address" id="address" class="form-control val" rows="7"></textarea>
+                            <span class="text-danger alrt" id="alert-address"></span>
                         </div>
+                        <div class="form-group-inner">
+                            <label style="float: left">Selfie</label>
+                            <input type="file" name="selfie" id="selfie" class="form-control val">
+                            <span class="text-danger alrt" id="alert-selfie"></span>
+                        </div>
+                        <img id="imgPreview" src="" alt="" style="max-width: 10rem;">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -94,14 +93,13 @@
 
 
     function clearInput() {
-        $('#id'            ).val ('')
-        $('#_jabatan'      ).val ('')
-        $('#alert_jabatan' ).html('')
-        $('#deskripsi'     ).val ('')
-        $('#alertdeskripsi').html('')
+        $('.val'      ).val ('')
+        $('.alrt' ).html('')
+        $('#imgPreview').attr('src', ``);
     }
 
     $(document).on('click', '#btn-add', function() {
+        clearInput()
         $('#modal-data').modal('show')
     })
 
@@ -155,26 +153,30 @@
         })
     })
 
+    $('#selfie').change(function(){
+        const file = this.files[0];
+        if (file){
+          let reader = new FileReader();
+          reader.onload = function(event){
+            console.log(event.target.result);
+            $('#imgPreview').attr('src', event.target.result);
+          }
+          reader.readAsDataURL(file);
+        }
+    });
+
     $(document).on('click', '#btn-edit', function() {
-        clearInput()
-        $('#modal-title').html('Formulir Edit Data')
-        let dataId = $(this).data('id')
-        $.get(`${baseUrl}/api/v1/reporter/${dataId}`, (res) => {
-            let data = res.data
-            $.each(data, (i,d) => {
-                if (i != "created_at" && i != "updated_at") {
-                    $(`#${i}`).val(d)
-                }
-            })
-            $('#modal-data').modal('show')
-        }).fail((err) => {
-            iziToast.error({
-                title   : 'Error'                    ,
-                message : 'Server sedang maintenance',
-                position: 'topRight'
+            let dataId = $(this).data('id');
+            $.get(`${baseUrl}/api/v1/reporter/` + dataId, function(res) {
+                clearInput()
+                $('#modal-data').modal('show');
+                $('#id').val(res.data.id);
+                $('#name').val(res.data.name);
+                $('#phone').val(res.data.phone);
+                $('#address').val(res.data.address);
+                $('#imgPreview').attr('src', `{{ asset('reporter-image/${res.data.selfie}') }}`);
             });
-        })
-    })
+        });
 
     $('#btn-simpan').click(function (e) {
             e.preventDefault();
@@ -243,7 +245,7 @@
                             <td>${i + 1}</td>
                             <td class="text-capitalize">${d.name}</td>
                             <td class="text-capitalize">${d.phone}</td>
-                            <td style="width:20%;"><img width="100%" style="height:200px" src="{{ asset('reporter-image/${d.selfie}') }}"></td>
+                            <td style="width:20%;"><img width="100%" style="max-width: 5rem" src="{{ asset('reporter-image/${d.selfie}') }}"></td>
                             <td class="text-capitalize">${d.address}</td>
                             <td>
                                 <button id="btn-edit" type="button" data-id="${d.id}" class="btn btn-custon-rounded-three btn-primary"><i class="fa fa-edit" aria-hidden="true"></i> Edit</button>
@@ -255,7 +257,7 @@
             } else {
                 $('#tb-body').append(`
                 <tr>
-                    <td colspan="6" style="text-align: center">
+                    <td colspan="7" style="text-align: center">
                         Data tidak ditemukan <br>
                         Silahkan tambah data terlebih dahulu
                     </td>

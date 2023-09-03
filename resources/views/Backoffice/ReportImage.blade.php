@@ -82,7 +82,7 @@
             } else {
                 $('#tb-body').append(`
                 <tr>
-                    <td colspan="3" style="text-align: center">
+                    <td colspan="4" style="text-align: center">
                         Data tidak ditemukan <br>
                         Silahkan tambah data terlebih dahulu
                     </td>

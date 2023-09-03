@@ -53,18 +53,18 @@
                         <input type="hidden" name="id" id="id">
                         <div class="form-group-inner">
                             <label style="float: left">Type</label>
-                            <input type="text" name="type" id="type" class="form-control" placeholder="Input disini">
-                            <span class="text-danger" id="alert-type"></span>
+                            <input type="text" name="type" id="type" class="form-control val" placeholder="Input disini">
+                            <span class="text-danger alrt" id="alert-type"></span>
                         </div>
                         <div class="form-group-inner">
                             <label style="float: left">Level</label>
-                            <input type="text" name="level" id="level" class="form-control" placeholder="Input disini">
-                            <span class="text-danger" id="alert-level"></span>
+                            <input type="text" name="level" id="level" class="form-control val" placeholder="Input disini">
+                            <span class="text-danger alrt" id="alert-level"></span>
                         </div>
                         <div class="form-group-inner">
                             <label style="float: left">Priority</label>
-                            <input type="text" name="priority" id="priority" class="form-control" placeholder="Input disini">
-                            <span class="text-danger" id="alert-priority"></span>
+                            <input type="text" name="priority" id="priority" class="form-control val" placeholder="Input disini">
+                            <span class="text-danger alrt" id="alert-priority"></span>
                         </div>
                     </form>
                 </div>
@@ -84,14 +84,12 @@
 
 
     function clearInput() {
-        $('#id'            ).val ('')
-        $('#_jabatan'      ).val ('')
-        $('#alert_jabatan' ).html('')
-        $('#deskripsi'     ).val ('')
-        $('#alertdeskripsi').html('')
+        $('.val'      ).val ('')
+        $('.alrt' ).html('')
     }
 
     $(document).on('click', '#btn-add', function() {
+        clearInput()
         $('#modal-data').modal('show')
     })
 
