@@ -18,11 +18,15 @@
                         <input type="text" name="" id="" value="{{$data['detail']['data']->flood->type}}" class="form-control" readonly>
                     </div>
                     <div class="form-group">
+                        <label for="">Pelapor </label>
+                        <input type="text" name="" id="" value="{{$data['report']['data']->reporter->name}}" class="form-control" readonly>
+                    </div>
+                    <div class="form-group">
                         <label for="">Level </label>
                         <input type="text" name="" class="form-control" value="{{$data['detail']['data']->level}}" id="" readonly>
                     </div>
                     <div class="form-group">
-                        <label for="">Priority </label>
+                        <label for="">Prioritas </label>
                         <input type="text" name="" class="form-control" id="" value="{{$data['detail']['data']->priority}}" readonly>
                     </div>
                     <div class="form-group">
@@ -36,7 +40,7 @@
             <div class="sparkline13-list">
                 <div class="sparkline13-hd">
                     <div class="main-sparkline13-hd">
-                        <h1><span class="table-project-n">Data</span> Image</h1><hr>
+                        <h1><span class="table-project-n">Data</span> Lokasi</h1><hr>
                     </div>
                 </div>
                 <div class="sparkline13-graph">
@@ -53,11 +57,8 @@
                         <input type="text" name="" class="form-control" id="" value="{{$data['detail']['data']->latitude}}" readonly>
                     </div>
                     <div class="form-group">
-                        <label for="">Reporter </label>
-                        <input type="text" name="" class="form-control" id="" value="{{$data['report']['data']->reporter->name}}" readonly>
-                    </div>
-                    <div class="form-group">
                         <label for="">Gambar </label>
+
                         @foreach ($data['photo']['data'] as $item)
                             <img src="{{ asset('images/'.$item->path) }}" alt="" style="width: 9rem; height: 10rem; margin-left: 10px;">
                         @endforeach

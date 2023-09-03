@@ -15,7 +15,7 @@
                 <form action="{{route('bo-report-image-store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <label for="">Flood <span class="text-danger">*</span></label>
+                        <label for="">Banjir <span class="text-danger">*</span></label>
                         <select name="flood_id" id="flood_id" class="form-control">
                             <option value="" selected disabled>-- Pilih --</option>
                             @foreach ($data['flood']['data'] as $item)
@@ -24,12 +24,30 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="">Level <span class="text-danger">*</span></label>
-                        <input type="text" name="level" class="form-control" id="level" required>
+                        <label for="">Pelapor <span class="text-danger">*</span></label>
+                        <select name="reporter_id" id="reporter_id" class="form-control">
+                            <option value="" selected disabled>-- Pilih --</option>
+                            @foreach ($data['reporter']['data'] as $item)
+                                <option value="{{$item->id}}">{{$item->name}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label for="">Priority <span class="text-danger">*</span></label>
-                        <input type="text" name="priority" class="form-control" id="priority" required>
+                        <label for="">Level <span class="text-danger">*</span></label>
+                        <select name="level" id="level" class="form-control" required>
+                            <option value="" selected disabled>Pilih</option>
+                            <option value="Kecil">Kecil</option>
+                            <option value="Sedang">Sedang</option>
+                            <option value="Besar">Besar</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="">prioritas <span class="text-danger">*</span></label>
+                        <select name="priority" id="priority" class="form-control" required>
+                            <option value="" selected disabled>Pilih</option>
+                            <option value="Aman">Aman</option>
+                            <option value="Segera">Segera</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="">Deskripsi <span class="text-danger">*</span></label>
@@ -42,12 +60,12 @@
             <div class="sparkline13-list">
                 <div class="sparkline13-hd">
                     <div class="main-sparkline13-hd">
-                        <h1><span class="table-project-n">Data</span> Image</h1><hr>
+                        <h1><span class="table-project-n">Data</span> Lokasi</h1><hr>
                     </div>
                 </div>
                 <div class="sparkline13-graph">
                     <div class="form-group">
-                        <label for="">Location <span class="text-danger">*</span></label>
+                        <label for="">Lokasi <span class="text-danger">*</span></label>
                         <input type="text" name="location" class="form-control" id="location" required>
                     </div>
                     <div class="form-group">
@@ -59,14 +77,6 @@
                         <input type="number" name="latitude" class="form-control" id="longtitude" required>
                     </div>
                     <div id="wrapper">
-                        <label for="">Reporter ID <span class="text-danger">*</span></label>
-                        <select name="reporter_id" id="reporter_id" class="form-control">
-                            <option value="" selected disabled>-- Pilih --</option>
-                            @foreach ($data['reporter']['data'] as $item)
-                                <option value="{{$item->id}}">{{$item->name}}</option>
-                            @endforeach
-                        </select>
-                        <br>
                         <label for="upload_file" class="custom-file-label"></i>Gambar</label>
                         <input type="file" class="form-control" style="margin-top: 10px" name="image[]" id="">
                         <input type="file" class="form-control" style="margin-top: 10px" name="image[]" id="">

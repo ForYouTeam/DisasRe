@@ -24,7 +24,7 @@
             <div class="sparkline13-list">
                 <div class="sparkline13-hd">
                     <div class="main-sparkline13-hd">
-                        <h1>Table <span class="table-project-n">Report</span></h1>
+                        <h1>Table <span class="table-project-n">Laporan</span></h1>
                         <a href="{{ route('add-report') }}" class="btn btn-primary btn-sm float-right"><i class="fa fa-plus"></i> Tambah</a>
                     </div>
                 </div>
@@ -32,9 +32,9 @@
                     <div class="datatable-dashv1-list custom-datatable-overright">
                         <div id="toolbar">
                             <select class="form-control dt-tb">
-                                <option value="">Export Basic</option>
-                                <option value="all">Export All</option>
-                                <option value="selected">Export Selected</option>
+                                <option value="">Export</option>
+                                <option value="all">Export Semua</option>
+                                <option value="selected">Export Pilihan</option>
                             </select>
                         </div>
                         <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
@@ -43,8 +43,8 @@
                                 <tr>
                                     <th data-field="state" data-checkbox="true"></th>
                                     <th data-field="id">No</th>
-                                    <th data-field="name" data-editable="true">Code Report</th>
-                                    <th data-field="action">Action</th>
+                                    <th data-field="name" data-editable="true">Kode Laporan</th>
+                                    <th data-field="action">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody id="tb-body">

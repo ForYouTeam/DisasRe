@@ -15,9 +15,9 @@
             <div class="datatable-dashv1-list custom-datatable-overright">
                 <div id="toolbar">
                     <select class="form-control dt-tb">
-                        <option value="">Export Basic</option>
-                        <option value="all">Export All</option>
-                        <option value="selected">Export Selected</option>
+                        <option value="">Export</option>
+                        <option value="all">Export Semua</option>
+                        <option value="selected">Export Pilihan</option>
                     </select>
                 </div>
                 <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
@@ -26,9 +26,9 @@
                         <tr>
                             <th data-field="state" data-checkbox="true"></th>
                             <th data-field="id">No</th>
-                            <th data-field="name" data-editable="true">Name</th>
+                            <th data-field="name" data-editable="true">Nama</th>
                             <th data-field="email" data-editable="true">No Hp</th>
-                            <th data-field="phone" data-editable="true">Selfie</th>
+                            <th data-field="phone" data-editable="true">foto Selfie</th>
                             <th data-field="phone" data-editable="true">Alamat</th>
                             <th data-field="action">Action</th>
                         </tr>
@@ -70,7 +70,7 @@
                             <span class="text-danger alrt" id="alert-address"></span>
                         </div>
                         <div class="form-group-inner">
-                            <label style="float: left">Selfie</label>
+                            <label style="float: left">Foto Selfie</label>
                             <input type="file" name="selfie" id="selfie" class="form-control val">
                             <span class="text-danger alrt" id="alert-selfie"></span>
                         </div>

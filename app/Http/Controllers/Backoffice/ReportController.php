@@ -45,7 +45,7 @@ class ReportController extends Controller
         $data = [
             'report' => $this->reportRepo->getPayloadById($id),
             'detail' => $this->detailRepo->getPayloadByReportId($id),
-            'photo' => $this->reportPhotoRepo->getPayloadByReportId(1),
+            'photo' => $this->reportPhotoRepo->getPayloadByReportId($id),
         ]; 
         return view('Backoffice.DetailReportImage')->with('data', $data);
     }
