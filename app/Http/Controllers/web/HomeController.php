@@ -47,7 +47,7 @@ class HomeController extends Controller
                 'address' =>  $request->reporter_address,
             ];
             if ($image = $request->file('selfie')) {
-                $destinationPath = public_path('reporter/');
+                $destinationPath = public_path('reporter-image/');
                     $reporterImage = random_int(100000, 999999)."-".date('YmdHis') . "." . $image->getClientOriginalExtension();
                     $data_reporter['selfie'] = $reporterImage;
                     try {
