@@ -220,11 +220,11 @@
                         $('#tb-body').append(`
                         <tr>
                             <td></td>
-                            <td>${i + 1}</td>
+                            <td style="width: 20px">${i + 1}</td>
                             <td class="text-capitalize">${d.type}</td>
                             <td class="text-capitalize">${d.level}</td>
                             <td class="text-capitalize">${d.priority}</td>
-                            <td>
+                            <td style="width: 250px">
                                 <button id="btn-edit" type="button" data-id="${d.id}" class="btn btn-custon-rounded-three btn-primary"><i class="fa fa-edit" aria-hidden="true"></i> Edit</button>
                                 <button id="btn-del" type="button" data-id="${d.id}" class="btn btn-custon-rounded-three btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Hapus</button>
                             </td>

@@ -71,9 +71,9 @@
                         $('#tb-body').append(`
                         <tr>
                             <td></td>
-                            <td>${i + 1}</td>
+                            <td style="width: 20px">${i + 1}</td>
                             <td class="text-capitalize">${d.report_number}</td>
-                            <td>
+                            <td style="width: 100px">
                                 <a href="${baseUrl}/report/detail/${d.id}" class="btn btn-custon-rounded-three btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></a>
                             </td>
                         </tr>
