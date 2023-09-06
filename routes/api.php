@@ -33,3 +33,4 @@ Route::prefix('v1/report')->controller(ReportController::class)->group(function(
     Route::delete('/{id}', 'deleteData');
     Route::post('/', 'upsertData');
 });
+Route::get('v1/geodata', [ReportController::class, 'getGeo']);

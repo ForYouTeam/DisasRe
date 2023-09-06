@@ -15,7 +15,7 @@
 
         @yield('content')
 
-        <div class="footer-copyright-area" style="margin-top: 650px">
+        {{-- <div class="footer-copyright-area" style="margin-top: 650px">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
@@ -25,7 +25,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 
 @include('layout.Footer')

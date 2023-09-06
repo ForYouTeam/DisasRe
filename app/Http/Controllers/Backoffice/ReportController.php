@@ -133,4 +133,10 @@ class ReportController extends Controller
         $result = $this->reportRepo->deletePayload($id);
         return response()->json($result, $result['code']);
     }
+
+    public function getGeo()
+    {
+        $result = $this->reportRepo->getGeoData();
+        return response()->json($result, $result['code']);
+    }
 }

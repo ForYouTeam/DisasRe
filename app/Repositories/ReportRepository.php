@@ -120,4 +120,32 @@ class ReportRepository implements ReportContract
       return $this->error($th->getMessage(), 500, $th, class_basename($this), __FUNCTION__ );
     }
   }
+
+  public function getGeoData()
+  {
+    try {
+      $geoData = [];
+      $data = $this->reportDetail->all();
+
+      foreach ($data as $value) {
+        array_push($geoData, [
+          "type" => "Feature",
+          "geometry" => [
+            "type" => "Point",
+            "coordinates" => [ floatval($value['longtitude']), floatval($value['latitude'])]
+          ],
+          "properties" => [
+            "description" => $value['desc'],
+            "point_count" => 1
+          ]
+        ]);
+      }
+
+      return $this->success($geoData, "success deleting data");
+
+    } catch (\Throwable $th) {
+      
+      return $this->error($th->getMessage(), 500, $th, class_basename($this), __FUNCTION__ );
+    }
+  }
 }
