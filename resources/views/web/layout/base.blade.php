@@ -40,14 +40,14 @@
 				<div class="site-navigation">
 					<div class="row g-0 align-items-center">
 						<div class="col-2">
-							<a href="index.html" class="logo m-0 float-start">Financing<span class="text-primary">.</span></a>
+							<a href="index.html" class="logo m-0 float-start"><img src="{{asset('Logo.png')}}" alt="" style="max-width: 5rem;"> &nbsp;BNPB SIGI<span class="text-primary"></span></a>
 						</div>
 						<div class="col-8 text-center ">
 							<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
 								<li class="active"><a href="#home" >Home</a></li>
-								<li><a href="#about">About</a></li>
+								<li><a href="#about">Tentang</a></li>
 								<li><a href="#form">Lapor</a></li>
-								<li><a href="#contact">Contact Us</a></li>
+								<li><a href="#contact">Kontak Kami</a></li>
 							</ul>
 						</div>
 						<div class="col-2 text-end">
@@ -57,7 +57,7 @@
 
 							<a href="#" class="call-us d-flex align-items-center">
 								<span class="icon-phone"></span>
-								<span>123-489-9381</span>
+								<span>+6285241054899</span>
 							</a>
 						</div>
 					</div>
@@ -77,7 +77,7 @@
 					</p>
 					<div class="align-items-center mb-5 mm" data-aos="fade-up" data-aos-delay="200">
 						<a href="#form" class="btn btn-outline-white-reverse me-4">Lapor</a>
-						<a href="https://www.youtube.com/watch?v=Mb1zrW_zra4" class="text-white glightbox">Contac Kami</a>
+						<a href="https://www.youtube.com/watch?v=Mb1zrW_zra4" class="text-white glightbox">Kontak Kami</a>
 					</div>
 				</div>
 				<div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
@@ -376,24 +376,24 @@
 			<div class="col-lg-4">
 				<div class="widget">
 					<h3>About</h3>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+					<p>Banjir di Sigi Biromaru, Sulawesi Tengah, mengingatkan kita akan kekuatan alam yang tidak terduga. Namun, di tengah bencana ini, kita juga melihat kekuatan solidaritas dan kepedulian manusia yang tumbuh lebih kuat.</p>
 				</div> <!-- /.widget -->
 				<div class="widget">
 					<address>43 Raymouth Rd. Baltemoer, <br> London 3910</address>
 					<ul class="list-unstyled links">
-						<li><a href="tel://11234567890">+1(123)-456-7890</a></li>
-						<li><a href="tel://11234567890">+1(123)-456-7890</a></li>
+						<li><a href="tel://11234567890">+6285241054899</a></li>
 						<li><a href="mailto:info@mydomain.com">info@mydomain.com</a></li>
 					</ul>
 				</div> <!-- /.widget -->
 			</div> <!-- /.col-lg-4 -->
 			<div class="col-lg-4">
 				<div class="widget">
-					<h3>Company</h3>
+					<h3>Dashboard</h3>
 					<ul class="list-unstyled float-start links">
 						<li><a href="#">Home</a></li>
-						<li><a href="#">About Us</a></li>
-						<li><a href="#">Contact</a></li>
+						<li><a href="#">Tentang</a></li>
+						<li><a href="#">Lapor</a></li>
+						<li><a href="#">Kontak Kami</a></li>
 					</ul>
 					<ul class="list-unstyled float-start links">
 						<li><a href="#">Partners</a></li>

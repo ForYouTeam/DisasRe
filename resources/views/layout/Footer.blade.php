@@ -39,9 +39,8 @@
 <script src="{{asset('assets/js/editable/bootstrap-datetimepicker.js')}}"></script>
 <script src="{{asset('assets/js/editable/bootstrap-editable.js')}}"></script>
 <script src="{{asset('assets/js/editable/xediable-active.js')}}"></script>
-<script src="{{asset('assets/izitoast/js/iziToast.min.js') }}"></script>
-<script src="{{asset('assets/initial/js/initial.min.js')}}"></script>
-<script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+<script src="{{ asset('assets/izitoast/js/iziToast.min.js') }}"></script>
+<script src="{{asset('assets/js/initial/js/initial.min.js')}}"></script>
 <script>
     $(document).ready(function(){
         $('.profile').initial()

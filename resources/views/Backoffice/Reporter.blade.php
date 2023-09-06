@@ -66,12 +66,12 @@
                         </div>
                         <div class="form-group-inner">
                             <label style="float: left">Alamat</label>
-                            <textarea name="address" id="address" class="form-control val" rows="7"></textarea>
+                            <textarea name="address" id="address" class="form-control val" rows="7" placeholder="Input disini"></textarea>
                             <span class="text-danger alrt" id="alert-address"></span>
                         </div>
                         <div class="form-group-inner">
                             <label style="float: left">Foto Selfie</label>
-                            <input type="file" name="selfie" id="selfie" class="form-control val">
+                            <input type="file" name="selfie" id="selfie" class="form-control val" accept="image/*">
                             <span class="text-danger alrt" id="alert-selfie"></span>
                         </div>
                         <img id="imgPreview" src="" alt="" style="max-width: 10rem;">

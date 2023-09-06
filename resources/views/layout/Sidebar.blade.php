@@ -1,8 +1,8 @@
 <div class="left-sidebar-pro">
     <nav id="sidebar" class="">
         <div class="sidebar-header">
-            <a href="index.html"><img class="main-logo" src="{{asset('Logo.png')}}" style="max-width: 5rem" alt="" /></a>
-            <strong><a href="index.html"><img src="{{asset('Logo.png')}}" alt="" /></a></strong>
+            <a href="index.html" style="margin-right: 1.5rem; font-size: 15pt;"><img class="main-logo" src="{{asset('Logo.png')}}" style="max-width: 4rem; margin-top: 0.4rem;" alt="" /><b>BNPB SIGI</b></a>
+            <strong><a href="index.html"><img src="{{asset('Logo.png')}}" alt="" /></a>BNPB</strong>
         </div>
         <div class="left-custom-menu-adp-wrap comment-scrollbar">
             <nav class="sidebar-nav left-sidebar-menu-pro">
