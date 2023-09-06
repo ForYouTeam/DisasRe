@@ -58,12 +58,24 @@
                         </div>
                         <div class="form-group-inner">
                             <label style="float: left">Level</label>
-                            <input type="text" name="level" id="level" class="form-control val" placeholder="Input disini">
+                            <select name="level" id="level" class="form-control">
+                                <option value="">-- Pilih --</option>
+                                <option value="ringan">Riangan</option>
+                                <option value="sedang">Sedang</option>
+                                <option value="berat">Berat</option>
+                                <option value="extream">Extream</option>
+                            </select>
                             <span class="text-danger alrt" id="alert-level"></span>
                         </div>
                         <div class="form-group-inner">
                             <label style="float: left">Prioritas</label>
-                            <input type="text" name="priority" id="priority" class="form-control val" placeholder="Input disini">
+                            <select name="priority" id="priority" class="form-control">
+                                <option value="">-- Pilih --</option>
+                                <option value="recovery">Recovery</option>
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                            </select>
                             <span class="text-danger alrt" id="alert-priority"></span>
                         </div>
                     </form>
