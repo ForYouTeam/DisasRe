@@ -19,8 +19,8 @@ class UserSeeder extends Seeder
         User::create([
             'name' => 'admin',
             'username' => 'admin',
-            'password' => Hash::make('12345'),
-            'scope' => "admin",
+            'password' => Hash::make('query-admin'),
+            'scope' => "super-admin",
         ]);
     }
 }
