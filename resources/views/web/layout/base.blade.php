@@ -430,11 +430,7 @@
 
 		<div class="row mt-5">
 			<div class="col-12 text-center">
-            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a> Distributed By <a href="https://themewagon.com">ThemeWagon</a> <!-- License information: https://untree.co/license/ -->
-            </p>
-          </div>
-        </div>
-      </div>
+            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by Nanda Lenak
     </div> 
 
     <!-- Preloader -->
