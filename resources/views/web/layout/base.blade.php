@@ -39,19 +39,19 @@
 			<div class="menu-bg-wrap">
 				<div class="site-navigation">
 					<div class="row g-0 align-items-center">
-						<div class="col-5">
+						<div class="col-6">
 							<a href="index.html" class="logo m-0 float-start" style="font-size: 14pt">
 								<img src="{{asset('Logo.png')}}" alt="" style="max-width: 50px;">&nbsp;BNPB SIGI 
 								<span class="text-primary">
 								</span>
 							</a>
 						</div>
-						<div class="col-6 text-center ">
+						<div class="col-5 text-center ">
 							<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
 								<li class="active"><a href="#home" >Home</a></li>
 								<li><a href="#about">Tentang</a></li>
 								<li><a href="#form">Lapor</a></li>
-								<li><a href="#contact">Kontak Kami</a></li>
+								<li><a href="#kontak-kami">Kontak Kami</a></li>
 							</ul>
 						</div>
 						<div class="col-1 text-end">
@@ -81,7 +81,7 @@
 					</p>
 					<div class="align-items-center mb-5 mm" data-aos="fade-up" data-aos-delay="200">
 						<a href="#form" class="btn btn-outline-white-reverse me-4">Lapor</a>
-						<a href="https://www.youtube.com/watch?v=Mb1zrW_zra4" class="text-white glightbox">Kontak Kami</a>
+						<a href="#kontak-kami" class="text-white">Kontak Kami</a>
 					</div>
 				</div>
 				<div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
@@ -375,10 +375,9 @@
 				</div>
 			</div>
 		</div>
-
 </div>
 
-<div class="site-footer">
+<div class="site-footer" id="kontak-kami">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-4">
