@@ -13,7 +13,9 @@ use App\Repositories\FloodRepository;
 use App\Repositories\ReporterRepository;
 use App\Repositories\ReportPhotoRepository;
 use App\Repositories\ReportRepository;
+use Illuminate\Http\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class HomeController extends Controller
@@ -37,8 +39,39 @@ class HomeController extends Controller
         return view('web.layout.base')->with('data' , $data);
     }
 
+    private function getStringBetween($string, $start, $end) {
+        $start_position = strpos($string, $start);
+        if ($start_position === false) {
+            return false;
+        }
+        
+        $end_position = strpos($string, $end, $start_position + strlen($start));
+        if ($end_position === false) {
+            return false;
+        }
+        
+        return substr($string, $start_position + strlen($start), $end_position - $start_position - strlen($start));
+    }
+
     public function store(Request $request)
     {
+        // try {
+        //     $base64Image = $request->input('selfie_file'); 
+        //     $base64_data = explode("base64,", $base64Image)[1];
+        //     $content = $this->getStringBetween($base64Image, "data:", ";");
+
+        //     $decoded_data = base64_decode($base64_data);
+
+        //     $file_type = "image/jpeg";
+
+        //     $nama_file = public_path('compressed/') . "" . $request->reporter_name . "." . $content;
+        //     file_put_contents($nama_file, $decoded_data);
+
+        //     return response()->json("berhasil", 200);
+        // } catch (\Throwable $th) {
+        //     return response()->json($th->getMessage(), 500);
+        // }
+
         try {
             $id = $request->id | null;
             $data_reporter = [
@@ -46,12 +79,18 @@ class HomeController extends Controller
                 'phone' =>  $request->reporter_phone,
                 'address' =>  $request->reporter_address,
             ];
-            if ($image = $request->file('selfie')) {
-                $destinationPath = public_path('reporter-image/');
-                    $reporterImage = random_int(100000, 999999)."-".date('YmdHis') . "." . $image->getClientOriginalExtension();
-                    $data_reporter['selfie'] = $reporterImage;
+            if ($image = $request->selfie_file) {
+                $base64Image = $request->input ( 'selfie_file' ) ;
+                $base64_data = explode ( "base64," , $base64Image)[1];
+                $extension   = $this ->getStringBetween($base64Image, "data:" , ";" ) ;
+
+                $decoded_data    = base64_decode ($base64_data) ;
+                $destinationPath = public_path ('reporter-image/') ;
+                $reporterImage   = random_int (100000, 999999)."-".date('YmdHis') . "." . $extension;
+
+                $data_reporter['selfie'] = $reporterImage ;
                     try {
-                        $image->move($destinationPath, $reporterImage);
+                        file_put_contents($destinationPath . "" . $reporterImage, $decoded_data);
                     } catch (\Exception $e) {
                         return redirect()->back()->withErrors(['upload_error' => 'File upload failed']);
                     }
@@ -74,13 +113,19 @@ class HomeController extends Controller
                 'latitude' => $request->latitude,
             ];
             $dataCollReportPhoto = [];
-            if ($image = $request->file('image')) {
+            if ($image = $request->image) {
                 foreach ($image as $key) {
+                    $base64Image = $request->input ( 'selfie_file' ) ;
+                    $base64_data = explode ( "base64," , $base64Image)[1];
+                    $extension   = $this ->getStringBetween($base64Image, "data:" , ";" ) ;
+    
+                    $decoded_data    = base64_decode ($base64_data) ;
+
                     $destinationPath = public_path('images/');
-                    $profileImage = random_int(100000, 999999)."-".date('YmdHis') . "." . $key->getClientOriginalExtension();
+                    $profileImage = random_int(100000, 999999)."-".date('YmdHis') . "." . $extension;
             
                     try {
-                        $key->move($destinationPath, $profileImage);
+                        file_put_contents($destinationPath . "" . $profileImage, $decoded_data);
                         $dataCollReportPhoto[] = ['path' => $profileImage];
                     } catch (\Exception $e) {
                         return redirect()->back()->withErrors(['upload_error' => 'File upload failed']);

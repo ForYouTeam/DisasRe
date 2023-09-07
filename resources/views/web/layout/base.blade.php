@@ -157,7 +157,8 @@
 								</div>
 								<div class="form-group">
 									<label for="">Selfie <span class="text-danger">*</span></label>
-									<input type="file" name="selfie" class="form-control" id="" required>
+									<input type="file" class="form-control" onchange="compressImage(this, 'selfie_file')" accept="image/*" required>
+									<input type="hidden" name="selfie_file" id="selfie_file">
 								</div>
 							</div>
 							<div class="text-center mt-5">
@@ -208,15 +209,18 @@
 											<label for="">Gambar <span class="text-danger">*</span></label>
 											<div class="form-group mt-3">
 												<label for="">File 1</label>
-												<input type="file" class="form-control gmbr" name="image[]" id="" required>
+												<input type="file" class="form-control gmbr" onchange="compressImage(this, 'image-1')" accept="image/*" required>
+												<input type="hidden" id="image-1" name="image[]">
 											</div>
 											<div class="form-group">
 												<label for="">File 2</label>
-												<input type="file" class="form-control gmbr" name="image[]" id="">
+												<input type="file" class="form-control gmbr" onchange="compressImage(this, 'image-2')" accept="image/*">
+												<input type="hidden" id="image-2" name="image[]">
 											</div>
 											<div class="form-group">
 												<label for="">File 3</label>
-												<input type="file" class="form-control gmbr" name="image[]" id="">
+												<input type="file" class="form-control gmbr" onchange="compressImage(this, 'image-3')" accept="image/*">
+												<input type="hidden" id="image-3" name="image[]">
 											</div>
 										</div>
 									</div>
@@ -453,15 +457,56 @@
     <script src="{{asset('web/js/navbar.js')}}"></script>
     <script src="{{asset('web/js/counter.js')}}"></script>
     <script src="{{asset('web/js/custom.js')}}"></script>
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/compressorjs/1.0.5/compressor.min.js"></script>
+		<script>
+		$(document).ready(function() {
+			navigator.geolocation.getCurrentPosition(function(position) {
+				$('#latitude').val(position.coords.latitude);
+				$('#longitude').val(position.coords.longitude);
+			});
+		});
+
+		function compressImage(inputElement, outputElementId) {
+			const outputElement = document.getElementById(outputElementId);
+			
+			if (!outputElement) {
+				console.error('Element output dengan ID ' + outputElementId + ' tidak ditemukan.');
+				return;
+			}
+
+			const file = inputElement.files[0];
+			if (file) {
+				const fileName = file.name;
+
+				// Mendapatkan ekstensi file dari nama file
+				const fileExtension = fileName.split('.').pop().toLowerCase();
+
+				// Compressor.js options
+				const options = {
+					quality: 0.6,
+					maxWidth: 800,
+					maxHeight: 600,
+					mimeType: 'image/jpeg', // Default mimeType
+					success(result) {
+						// Hasil kompresi dalam bentuk objek blob
+						const reader = new FileReader();
+						reader.onload = function () {
+							const base64Image = reader.result.split(',')[1]; // Ambil bagian base64 dari hasil kompresi
+							outputElement.value = `data:${fileExtension};base64,${base64Image}`;
+							// console.log(outputElement.value);
+						};
+						reader.readAsDataURL(result);
+					},
+					error(err) {
+						console.error(err.message);
+					},
+				};
+				new Compressor(file, options);
+			}
+		}
+
+		</script>
 
   </body>
-  <script>
-	$(document).ready(function() {
-		navigator.geolocation.getCurrentPosition(function(position) {
-			$('#latitude').val(position.coords.latitude);
-			$('#longitude').val(position.coords.longitude);
-		});
-	});
-  </script>
   </html>
