@@ -147,17 +147,17 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="">Nama <span class="text-danger">*</span></label>
-									<input type="text" name="reporter_name" class="form-control" id="" required>
+									<input type="text" name="reporter_name" class="form-control" id="" placeholder="Input disini" required>
 								</div>
 								<div class="form-group">
 									<label for="">No Handpone <span class="text-danger">*</span></label>
-									<input type="number" name="reporter_phone" class="form-control" id="" required>
+									<input type="number" name="reporter_phone" class="form-control" id="phone" placeholder="Input disini" required>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="">Alamat <span class="text-danger">*</span></label>
-									<input type="text" name="reporter_address" class="form-control" id="" required>
+									<input type="text" name="reporter_address" class="form-control" id="" placeholder="Input disini" required>
 								</div>
 								<div class="form-group">
 									<label for="">Selfie <span class="text-danger">*</span></label>
@@ -464,6 +464,15 @@
 				$('#latitude').val(position.coords.latitude);
 				$('#longitude').val(position.coords.longitude);
 			});
+
+			const inputNumber = $('#phone');
+
+            inputNumber.on('input', function() {
+                const inputValue = inputNumber.val();
+                if (inputValue.length > 13) {
+                    inputNumber.val(inputValue.slice(0, 13)); // Menghapus karakter
+                }
+            });
 		});
 
 		function compressImage(inputElement, outputElementId) {
