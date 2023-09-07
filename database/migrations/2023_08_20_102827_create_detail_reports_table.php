@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('detail_reports', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('flood_id')->constrained('floods');
-            $table->foreignId('report_id')->constrained('reports');
+            $table->foreignId('flood_id')->constrained('floods')->onDelete('cascade');
+            $table->foreignId('report_id')->constrained('reports')->onDelete('cascade');
             $table->string('level', 25);
             $table->string('priority', 50);
             $table->text('desc');
