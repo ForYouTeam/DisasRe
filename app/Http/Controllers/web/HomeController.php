@@ -15,6 +15,7 @@ use App\Repositories\ReportPhotoRepository;
 use App\Repositories\ReportRepository;
 use Illuminate\Http\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -55,23 +56,6 @@ class HomeController extends Controller
 
     public function store(Request $request)
     {
-        // try {
-        //     $base64Image = $request->input('selfie_file'); 
-        //     $base64_data = explode("base64,", $base64Image)[1];
-        //     $content = $this->getStringBetween($base64Image, "data:", ";");
-
-        //     $decoded_data = base64_decode($base64_data);
-
-        //     $file_type = "image/jpeg";
-
-        //     $nama_file = public_path('compressed/') . "" . $request->reporter_name . "." . $content;
-        //     file_put_contents($nama_file, $decoded_data);
-
-        //     return response()->json("berhasil", 200);
-        // } catch (\Throwable $th) {
-        //     return response()->json($th->getMessage(), 500);
-        // }
-
         try {
             $id = $request->id | null;
             $data_reporter = [
@@ -137,6 +121,7 @@ class HomeController extends Controller
                 return back();
             }
         } catch (\Throwable $th) {
+            Log::error($th->getMessage());
             Alert::error('gagal', 'periksa kembali inputan anda');
             return back();
         }
