@@ -115,9 +115,8 @@ class HomeController extends Controller
             $dataCollReportPhoto = [];
             if ($image = $request->image) {
                 foreach ($image as $key) {
-                    $base64Image = $request->input ( 'selfie_file' ) ;
-                    $base64_data = explode ( "base64," , $base64Image)[1];
-                    $extension   = $this ->getStringBetween($base64Image, "data:" , ";" ) ;
+                    $base64_data = explode ( "base64," , $key)[1];
+                    $extension   = $this->getStringBetween($base64Image, "data:" , ";" ) ;
     
                     $decoded_data    = base64_decode ($base64_data) ;
 
