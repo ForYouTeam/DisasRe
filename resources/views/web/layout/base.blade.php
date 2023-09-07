@@ -218,12 +218,12 @@
 											</div>
 											<div class="form-group">
 												<label for="">File 2</label>
-												<input type="file" class="form-control gmbr" onchange="compressImage(this, 'image-2')" accept="image/*">
+												<input type="file" class="form-control gmbr" onchange="compressImage(this, 'image-2')" accept="image/*" required>
 												<input type="hidden" id="image-2" name="image[]">
 											</div>
 											<div class="form-group">
 												<label for="">File 3</label>
-												<input type="file" class="form-control gmbr" onchange="compressImage(this, 'image-3')" accept="image/*">
+												<input type="file" class="form-control gmbr" onchange="compressImage(this, 'image-3')" accept="image/*" required>
 												<input type="hidden" id="image-3" name="image[]">
 											</div>
 										</div>
