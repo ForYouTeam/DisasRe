@@ -54,6 +54,7 @@ class UserRepository implements UserContract
     try {
       
       $payload['password'] = Hash::make($payload['password']);
+      $payload['scope'] = 'admin';
 
       if ($id) {
 

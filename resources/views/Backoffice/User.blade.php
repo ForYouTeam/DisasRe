@@ -66,15 +66,6 @@
                             <input type="password" name="password" id="password" class="form-control val" placeholder="Input disini">
                             <span class="text-danger alrt" id="alert-password"></span>
                         </div>
-                        <div class="form-group-inner">
-                            <label style="float: left">Role</label>
-                            <select class="form-control val" name="scope" id="scope">
-                                <option selected disabled value="set">-- Pilih --</option>
-                                <option value="admin">Admin</option>
-                                <option value="superadmin">Super Admin</option>
-                            </select>
-                            <span class="text-danger alrt" id="alert-scope"></span>
-                        </div>
                     </form>
                 </div>
             </div>

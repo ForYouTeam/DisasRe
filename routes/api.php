@@ -11,6 +11,7 @@ Route::prefix('v1/users')->controller(UserController::class)->group(function() {
     Route::get('/', 'getAllData');
     Route::get('/{id}', 'getDataById');
     Route::post('/', 'upsertData');
+    Route::delete('/{id}', 'deleteData');
 });
 
 Route::prefix('v1/flood')->controller(FloodController::class)->group(function() {

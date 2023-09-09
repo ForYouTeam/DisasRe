@@ -17,10 +17,17 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::create([
-            'name' => 'admin',
-            'username' => 'admin',
-            'password' => Hash::make('query-admin'),
+            'name' => 'Super Admin',
+            'username' => 'superadmin',
+            'password' => Hash::make('12345'),
             'scope' => "super-admin",
+        ]);
+
+        User::create([
+            'name' => 'Admin',
+            'username' => 'admin',
+            'password' => Hash::make('123123'),
+            'scope' => "admin",
         ]);
     }
 }

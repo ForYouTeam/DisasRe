@@ -14,32 +14,36 @@
                             Home
                         </a>
                     </li>
-                    <strong style="color: rgba(0, 0, 0, 0.438); padding: 15px; margin-bottom: -10px" >MENU</strong>
-                    <li class="{{ Route::is('bo-report-image') ? 'active' : '' }}">
-                        <a title="Landing Page" href="{{route('bo-report-image')}}" aria-expanded="false">
-                            <span class="educate-icon educate-course icon-wrap"></span>
-                           Laporan
-                        </a>
-                    </li>
-                    <li class="{{ Route::is('bo-reporter') ? 'active' : '' }}">
-                        <a title="Landing Page" href="{{route('bo-reporter')}}" aria-expanded="false">
-                            <span class="educate-icon educate-course icon-wrap"></span>
-                           Pelapor
-                        </a>
-                    </li>
-                    <li class="{{ Route::is('bo-flood') ? 'active' : '' }}">
-                        <a title="Landing Page" href="{{route('bo-flood')}}" aria-expanded="false">
-                            <span class="educate-icon educate-course icon-wrap"></span>
-                           Banjir
-                        </a>
-                    </li>
-                    <strong style="color: rgba(0, 0, 0, 0.438); padding: 15px; margin-bottom: -10px" >USER</strong>
-                    <li class="{{ Route::is('bo-user') ? 'active' : '' }}">
-                        <a title="Landing Page" href="{{route('bo-user')}}" aria-expanded="false">
-                            <span class="educate-icon educate-course icon-wrap"></span>
-                           Akun
-                        </a>
-                    </li>
+                    @if (Auth::user()->scope == 'admin' || Auth::user()->scope == 'super-admin')
+                        <strong style="color: rgba(0, 0, 0, 0.438); padding: 15px; margin-bottom: -10px" >MENU</strong>
+                        <li class="{{ Route::is('bo-report-image') ? 'active' : '' }}">
+                            <a title="Landing Page" href="{{route('bo-report-image')}}" aria-expanded="false">
+                                <span class="educate-icon educate-course icon-wrap"></span>
+                            Laporan
+                            </a>
+                        </li>
+                        <li class="{{ Route::is('bo-reporter') ? 'active' : '' }}">
+                            <a title="Landing Page" href="{{route('bo-reporter')}}" aria-expanded="false">
+                                <span class="educate-icon educate-course icon-wrap"></span>
+                            Pelapor
+                            </a>
+                        </li>
+                        <li class="{{ Route::is('bo-flood') ? 'active' : '' }}">
+                            <a title="Landing Page" href="{{route('bo-flood')}}" aria-expanded="false">
+                                <span class="educate-icon educate-course icon-wrap"></span>
+                            Banjir
+                            </a>
+                        </li>
+                    @endif
+                    @if (Auth::user()->scope == 'super-admin')
+                        <strong style="color: rgba(0, 0, 0, 0.438); padding: 15px; margin-bottom: -10px" >USER</strong>
+                        <li class="{{ Route::is('bo-user') ? 'active' : '' }}">
+                            <a title="Landing Page" href="{{route('bo-user')}}" aria-expanded="false">
+                                <span class="educate-icon educate-course icon-wrap"></span>
+                            Akun
+                            </a>
+                        </li>
+                    @endif
                 </ul>
             </nav>
         </div>
