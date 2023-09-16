@@ -41,7 +41,7 @@
 					<div class="row g-0 align-items-center">
 						<div class="col-6">
 							<a href="index.html" class="logo m-0 float-start" style="font-size: 14pt">
-								<img src="{{asset('Logo.png')}}" alt="" style="max-width: 50px;">&nbsp;BNPB SIGI 
+								<img src="{{asset('Logo.png')}}" alt="" style="max-width: 50px;">&nbsp;BPBD SIGI 
 								<span class="text-primary">
 								</span>
 							</a>
@@ -61,7 +61,7 @@
 
 							<a href="#" class="call-us d-flex align-items-center">
 								<span class="icon-phone"></span>
-								<span>+6285241054899</span>
+								<span>+6282334317534</span>
 							</a>
 						</div>
 					</div>
@@ -105,7 +105,7 @@
 					<div class="mb-5">
 						<h2 class="text-black h4">Informasi Banjir.</h2>
 						<p>
-							Banjir di Sigi Biromaru, Sulawesi Tengah, mengingatkan kita akan kekuatan alam yang tidak terduga. Namun, di tengah bencana ini, kita juga melihat kekuatan solidaritas dan kepedulian manusia yang tumbuh lebih kuat.
+							Banjir Sulawesi Tengah, mengingatkan kita akan kekuatan alam yang tidak terduga. Namun, di tengah bencana ini, kita juga melihat kekuatan solidaritas dan kepedulian manusia yang tumbuh lebih kuat.
 						</p>
 					</div>
 					<div class="d-flex mb-3 service-alt">
@@ -383,13 +383,13 @@
 			<div class="col-lg-4">
 				<div class="widget">
 					<h3>About</h3>
-					<p>Banjir di Sigi Biromaru, Sulawesi Tengah, mengingatkan kita akan kekuatan alam yang tidak terduga. Namun, di tengah bencana ini, kita juga melihat kekuatan solidaritas dan kepedulian manusia yang tumbuh lebih kuat.</p>
+					<p>Banjir Sulawesi Tengah, mengingatkan kita akan kekuatan alam yang tidak terduga. Namun, di tengah bencana ini, kita juga melihat kekuatan solidaritas dan kepedulian manusia yang tumbuh lebih kuat.</p>
 				</div> <!-- /.widget -->
 				<div class="widget">
-					<address>43 Raymouth Rd. Baltemoer, <br> London 3910</address>
+					<address> <br> </address>
 					<ul class="list-unstyled links">
-						<li><a href="tel://11234567890">+6285241054899</a></li>
-						<li><a href="mailto:info@mydomain.com">info@mydomain.com</a></li>
+						<li><a href="tel://11234567890">+6282334317534</a></li>
+						<li><a href="mailto:info@mydomain.com">bpbdsulteng@gmail.com</a></li>
 					</ul>
 				</div> <!-- /.widget -->
 			</div> <!-- /.col-lg-4 -->

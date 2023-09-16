@@ -193,7 +193,7 @@
                 $('#modal-data').modal('hide')
                 Swal.fire({
                     title            : 'Success'               ,
-                    text             : 'Data Berhasil Dihapus.',
+                    text             : 'Data Berhasil Dibuat.',
                     icon             : 'success'               ,
                     cancelButtonColor: '#d33'                  ,
                     confirmButtonText: 'Oke'
